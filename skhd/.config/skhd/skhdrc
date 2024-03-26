@@ -1,0 +1,65 @@
+# Changing focus
+hyper - h: yabai -m window --focus west
+hyper - j: yabai -m window --focus south
+hyper - k: yabai -m window --focus north
+hyper - l: yabai -m window --focus east
+
+# Moving windows
+lctrl + lshift - h: yabai -m window --warp west
+lctrl + lshift - j: yabai -m window --warp south
+lctrl + lshift - k: yabai -m window --warp north
+lctrl + lshift - l: yabai -m window --warp east
+
+# Resize windows
+lctrl + alt - h: yabai -m window --resize left:-50:0; \
+    yabai -m window --resize right:-50:0
+lctrl + alt - j: yabai -m window --resize bottom:0:50; \
+    yabai -m window --resize top:0:50
+lctrl + alt - k: yabai -m window --resize top:0:-50; \
+    yabai -m window --resize bottom:0:-50
+lctrl + alt - l: yabai -m window --resize right:50:0; \
+    yabai -m window --resize left:50:0
+
+# Equalize size of windows
+hyper - e: yabai -m space --balance
+
+# Rotate windows
+hyper - r: yabai -m space --rotate 90
+
+# Rotate on X and Y Axis
+hyper - x: yabai -m space --mirror x-axis
+hyper - y: yabai -m space --mirror y-axis
+
+# Float / Unfloat window
+hyper - space: \
+    yabai -m window --toggle float; \
+    yabai -m window --toggle border
+
+# Make window native fullscreen
+hyper - f: yabai -m window --toggle zoom-fullscreen
+
+# Quit and restart yabai
+hyper - q: brew services stop yabai
+hyper - s: brew services start yabai
+lshift + lctrl + alt - r: brew services restart yabai
+
+#Open terminal in the current window
+hyper - t: open /Applications/iTerm.app && osascript -e 'tell application "Finder" to set currentFolder to POSIX path of (target of front Finder window as alias)' -e 'tell application "iTerm" to tell current session of current window to write text "cd " & quoted form of currentFolder'
+
+# Move current window to space 1
+cmd - 1: yabai -m window --space 1
+
+# Move current window to space 2
+cmd - 2: yabai -m window --space 2
+
+# Move current window to space 3
+cmd - 3: yabai -m window --space 3
+
+# Move current window to space 4
+cmd - 4: yabai -m window --space 4
+
+# Move current window to space 5
+cmd - 5: yabai -m window --space 5
+
+# Move current window to space 6
+cmd - 6: yabai -m window --space 6
