@@ -13,7 +13,6 @@ local reminders = sbar.add("item", {
     string = icons.reminders.icon,
   },
   label = {drawing = false},
-  update_freq = 180,
 })
 
 local reminders_bracket = sbar.add("bracket", "widgets.reminders.bracket", {
@@ -21,6 +20,44 @@ local reminders_bracket = sbar.add("bracket", "widgets.reminders.bracket", {
 }, {
   background = { color = colors.bg1 },
 })
+
+reminders_bracket:subscribe("mouse.entered", function(env)
+  sbar.animate("tanh", 30, function()
+    reminders_bracket:set({
+      background = {
+        color = colors.grey
+      },
+      border = {
+        color = colors.bg1
+      }
+    })
+    reminders:set({
+      icon = {
+        color = colors.bg1
+      }
+    })
+  end)
+end)
+
+
+reminders_bracket:subscribe("mouse.exited", function(env)
+  sbar.animate("tanh", 30, function()
+    reminders_bracket:set({
+      background = {
+        color = colors.bg1
+      },
+      border = {
+        color = colors.bg2
+      }
+    })
+    reminders:set({
+      icon = {
+        color = colors.white
+      }
+    })
+  end)
+end)
+
 
 
 

@@ -2,7 +2,7 @@ local icons = require("icons")
 local colors = require("colors")
 
 local whitelist = { ["Spotify"] = true,
-                    ["Music"] = true    };
+                    ["Music"] = false    };
 
 local media_cover = sbar.add("item", {
   position = "right",
@@ -85,7 +85,7 @@ end
 
 media_cover:subscribe("media_change", function(env)
   if whitelist[env.INFO.app] then
-    local drawing = (env.INFO.state == "playing")
+    local drawing = (env.INFO.state == "playing" or env.INFO.state == "paused")
     media_artist:set({ drawing = drawing, label = env.INFO.artist, })
     media_title:set({ drawing = drawing, label = env.INFO.title, })
     media_cover:set({ drawing = drawing })

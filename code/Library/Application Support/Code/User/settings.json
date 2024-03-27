@@ -228,8 +228,6 @@
 	},
 	"solidity.telemetry": false,
 	"workbench.colorTheme": "Catppuccin Mocha",
-	"animations.Install-Method": "Apc Customize UI++",
-	"update.mode": "manual",
 	"apc.electron": {
 		"opacity": 0.91,
 		"transparent": true,
