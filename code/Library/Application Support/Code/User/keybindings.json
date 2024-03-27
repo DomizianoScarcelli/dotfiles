@@ -1,0 +1,72 @@
+[
+	{
+		"key": "ctrl+`",
+		"command": "workbench.action.terminal.focus"
+	},
+	{
+		"key": "ctrl+`",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "terminalFocus"
+	},
+	// NAVIGATION
+	{
+		"key": "cmd+shift+a",
+		"command": "workbench.action.terminal.focusNext",
+		"when": "terminalFocus"
+	},
+	// {
+	// 	"key": "cmd+shift+b",
+	// 	"command": "workbench.action.terminal.focusPrevious",
+	// 	"when": "terminalFocus"
+	// },
+	{
+		"key": "cmd+shift+j",
+		"command": "workbench.action.togglePanel"
+	},
+	{
+		"key": "cmd+shift+n",
+		"command": "workbench.action.terminal.new",
+		"when": "terminalFocus"
+	},
+	// {
+	// 	"key": "cmd+shift+w",
+	// 	"command": "workbench.action.terminal.kill",
+	// 	"when": "terminalFocus"
+	// },
+	// FILE TREE
+	{
+		"command": "workbench.action.toggleSidebarVisibility",
+		"key": "cmd+e"
+	},
+	{
+		"command": "workbench.files.action.focusFilesExplorer",
+		"key": "cmd+e",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "n",
+		"command": "explorer.newFile",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "renameFile",
+		"key": "r",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"key": "a",
+		"command": "explorer.newFolder",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "deleteFile",
+		"key": "d",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+
+	// EXTRA
+	{
+		"key": "cmd+shift+5",
+		"command": "editor.emmet.action.matchTag"
+	}
+]
