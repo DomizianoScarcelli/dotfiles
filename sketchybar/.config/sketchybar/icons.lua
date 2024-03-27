@@ -34,6 +34,8 @@ local icons = {
       connected = "􀙇",
       disconnected = "􀙈",
       router = "􁓤",
+      closed_lock = "􀎡",
+      opened_lock = "􀎥"
     },
     media = {
       back = "􀊊",
