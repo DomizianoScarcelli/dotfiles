@@ -67,7 +67,7 @@ local function updateTemperature()
   local temperature = 0.
   sbar.exec("/Applications/Stats.app/Contents/Resources/smc list -t | grep 'Tp2a' | awk '{print $2}'", function(output)
     temperature = math.floor(tonumber(output))
-    temp:push({ temperature / 100. })
+    temp:push({ temperature / 130. })
     
     local color = colors.blue
     if temperature > 30 then
