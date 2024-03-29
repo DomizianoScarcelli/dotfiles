@@ -20,6 +20,10 @@ local icons = {
       _10="􀊡",
       _0="􀊣",
     },
+    devices = {
+      headphones = "􀑈",
+      airpods = "􀟥",
+    },
     battery = {
       _100 = "􀛨",
       _75 = "􀺸",

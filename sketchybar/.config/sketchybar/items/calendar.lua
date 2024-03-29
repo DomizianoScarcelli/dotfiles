@@ -1,53 +1,62 @@
 local settings = require("settings")
 local colors = require("colors")
 
--- Padding item required because of bracket
-sbar.add("item", { position = "right", width = settings.group_paddings })
-
-local cal = sbar.add("item", {
+-- Date item
+local date = sbar.add("item", {
   icon = {
-    color = colors.white,
-    padding_left = 8,
+    color = colors.yellow,
+    padding_right = 1,
+    drawing = "off",
     font = {
-      style = settings.font.style_map["Black"],
       size = 12.0,
     },
   },
   label = {
-    color = colors.white,
-    padding_right = 8,
-    width = 75,
-    align = "right",
-    font = { family = settings.font.numbers },
+    padding_left = 0,
+    padding_right = 4,
+    font = { family = settings.font.text, 
+    style = settings.font.style_map["Bold"]
+    ,size = 12.0 },
   },
   position = "right",
-  update_freq = 30,
-  padding_left = 1,
-  padding_right = 1,
-  background = {
-    color = colors.transparent,
-    -- border_color = colors.black,
-    border_width = 0
+  update_freq = 60,
+  width = 0,
+  y_offset = 7,
+})
+
+date:subscribe({ "forced", "routine", "system_woke", "mouse.entered", "mouse.exited", "mouse.exited.global" }, function(env)
+  date:set({ label = os.date("%a, %b %d") })
+end)
+
+-- date:subscribe("mouse.clicked", function(env)
+--   sbar.exec("open -a Calendar.app")
+-- end)
+
+-- Clock item
+local clock = sbar.add("item", {
+  icon = {
+    drawing = "off",
   },
+  label = {
+    padding_right = 4,
+    font = { family = settings.font.numbers, size = 12.0},
+  },
+  padding_left = 10,
+  position = "right",
+  update_freq = 10,
+  y_offset = -5,
+  popup = { align = "right" },
 })
 
--- -- Double border for calendar using a single item bracket
-sbar.add("bracket", { cal.name }, {
-  background = {
-    color = colors.transparent,
-    height = 28,
-    -- border_color = colors.grey,
-  }
-})
-
--- Padding item required because of bracket
-sbar.add("item", { position = "right", width = settings.group_paddings })
-
-cal:subscribe({ "forced", "routine", "system_woke" }, function(env)
-cal:set({ icon = os.date("%a. %d %b."), label = os.date("%I:%M %p") })
+clock:subscribe({ "forced", "routine", "system_woke", "mouse.entered", "mouse.exited", "mouse.exited.global" }, function(env)
+  clock:set({ label = os.date("%I:%M %p") })
 end)
 
+-- clock:subscribe("mouse.clicked", function(env)
+--   sbar.exec("open -a Calendar.app")
+-- end)
 
-cal:subscribe("mouse.clicked", function(env)
-    sbar.exec("open /Applications/Fantastical.app")
-end)
+-- local calendar = sbar.add("bracket", {
+--   date.name,
+--   clock.name,
+-- }, {background = { color = colors.bg1 }})
