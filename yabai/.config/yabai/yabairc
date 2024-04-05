@@ -4,7 +4,6 @@
 # bsp or float (default: bsp)
 yabai -m config layout bsp
 
-# My custom space names for my 3 monitor setup. These names are used in some of my scripts.
 yabai -m space 1 --label one
 yabai -m space 2 --label two
 yabai -m space 3 --label three
@@ -19,15 +18,15 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add app="^Stats$" manage=off
 # yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^WhatPulse$" manage=off
+# yabai -m rule --add app="^WhatPulse$" manage=off
 # yabai -m rule --add app="^Disk Utility$" manage=off
 # yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="Fantastical" manage=off
 # yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
-yabai -m rule --add app="^LinearMouse$" manage=off
-yabai -m rule --add app="^DropPoint$" manage=off
+# yabai -m rule --add app="^LinearMouse$" manage=off
+# yabai -m rule --add app="^DropPoint$" manage=off
 # yabai -m rule --add app="^FaceTime$" manage=off
 # yabai -m rule --add app="^Whatsapp$" manage=off
 yabai -m rule --add app="^coconutBattery$" manage=off
@@ -70,7 +69,8 @@ yabai -m config mouse_action1 move
 
 ## Change how yabai looks
 yabai -m config layout 
-yabai -m config top_padding 50
+# yabai -m config top_padding 10
+yabai -m config external_bar all:50:0
 yabai -m config bottom_padding 10
 yabai -m config left_padding 10
 yabai -m config right_padding 10
