@@ -34,18 +34,20 @@ for i = 1, 10, 1 do
     popup = { background = { border_width = 5, border_color = colors.black } }
   })
 
+  
   spaces[i] = space
-
+  
   -- Single item bracket for space items to achieve double border on highlight
   local space_bracket = sbar.add("bracket", { space.name }, {
-    background = {
-      color = colors.transparent,
-      border_color = colors.bg2,
-      height = 28,
-      border_width = 2
-    }
-  })
+      background = {
+          color = colors.transparent,
+          border_color = colors.bg2,
+          height = 28,
+          border_width = 2
+        }
+    })
 
+    
   -- Padding space
   sbar.add("space", "space.padding." .. i, {
     space = i,
@@ -80,13 +82,7 @@ for i = 1, 10, 1 do
   end)
 
   space:subscribe("mouse.clicked", function(env)
-    if env.BUTTON == "other" then
-      space_popup:set({ background = { image = "space." .. env.SID } })
-      space:set({ popup = { drawing = "toggle" } })
-    else
-      local op = (env.BUTTON == "right") and "--destroy" or "--focus"
-      sbar.exec("yabai -m space " .. op .. " " .. env.SID)
-    end
+      sbar.exec('osascript -e \'tell application "System Events" to key code ' .. (17 + i) .. ' using {control down}\'')
   end)
 
   space:subscribe("mouse.exited", function(_)

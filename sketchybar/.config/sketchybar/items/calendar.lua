@@ -43,7 +43,7 @@ local clock = sbar.add("item", {
   },
   padding_left = 10,
   position = "right",
-  update_freq = 10,
+  update_freq = 5,
   y_offset = -5,
   popup = { align = "right" },
 })
