@@ -20,12 +20,13 @@ return require('packer').startup(function(use)
       requires = {
           {'williamboman/mason.nvim'},
           {'williamboman/mason-lspconfig.nvim'},
-
           {'neovim/nvim-lspconfig'},
-          {'hrsh7th/nvim-cm},
+          {'hrsh7th/nvim-cm'},
           {'hrsh7th/cmp-nvim-lsp'},
           {'L3MON4D3/LuaSnip'},
       }
   }
+  use {"tpope/vim-commentary"}
   end)
+
 
