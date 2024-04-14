@@ -1,4 +1,2 @@
-echo "Entering tmux session";
-tmux attach -t hack || tmux new -s hack; exit
-
+eval "$(fzf --zsh)"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh - 
