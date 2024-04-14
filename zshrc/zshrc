@@ -1,1 +1,4 @@
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh -
+echo "Entering tmux session";
+tmux attach -t hack || tmux new -s hack; exit
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh - 

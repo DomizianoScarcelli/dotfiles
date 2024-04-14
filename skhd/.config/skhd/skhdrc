@@ -41,7 +41,7 @@ hyper - f: yabai -m window --toggle zoom-fullscreen
 # Quit and restart yabai
 # hyper - q: brew services stop yabai
 # hyper - s: brew services start yabai
-# lshift + lctrl + alt - r: brew services restart yabai
+# lshift + alt - r: yabai --service-stop; yabai --service-start
 
 #Open terminal in the current window
 hyper - t: open /Applications/iTerm.app && osascript -e 'tell application "Finder" to set currentFolder to POSIX path of (target of front Finder window as alias)' -e 'tell application "iTerm" to tell current session of current window to write text "cd " & quoted form of currentFolder'
