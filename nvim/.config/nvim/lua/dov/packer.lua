@@ -42,7 +42,16 @@ return require('packer').startup(function(use)
   -- Ranger
   use {"francoiscabrol/ranger.vim"}
   use {"rbgrouleff/bclose.vim"}
+  -- Cheatsheet
+  use {
+      'sudormrfbin/cheatsheet.nvim',
 
+      requires = {
+          {'nvim-telescope/telescope.nvim'},
+          {'nvim-lua/popup.nvim'},
+          {'nvim-lua/plenary.nvim'},
+      }
+  }
   end)
 
 

@@ -1,0 +1,17 @@
+## telescope
+Find Files | <leader>ff
+Find Git Files | <leader>gf
+Live Grep | <leader>fg
+Find Recent Files | <leader>fo
+Git Commits | <leader>gc
+Git Status | <leader>gs
+
+## toggleterm
+New Terminal | <leader>tt
+New Floating Terminal | <leader>ft
+New Lazy Git Terminal | <leader>lg
+
+
+
+
+
