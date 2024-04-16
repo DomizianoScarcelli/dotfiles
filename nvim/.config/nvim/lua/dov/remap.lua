@@ -19,3 +19,5 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("i", "<M-BS>", "<C-W>")
+
+vim.keymap.set("n", "<leader>s", vim.cmd.update)

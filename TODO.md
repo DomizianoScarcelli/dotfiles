@@ -1,0 +1,3 @@
+- Deactivate treesitter for .csv, otherwise it conflicts with csv rainbow plugin
+- Install obsidian.vim plugin to edit obsidian documents inside of neovim
+- Configure toggleterm plugin to have a togglable terminal inside of nvim

@@ -2,18 +2,25 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  -- Packer 
+  use { 'wbthomason/packer.nvim' }
+  -- Telescope
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.6',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+	  requires = { {'nvim-lua/plenary.nvim', "BurntSushi/ripgrep"} }
   }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  -- Telescope Icons
+  use {'nvim-tree/nvim-web-devicons'}
+  -- Color Scheme
   use { "catppuccin/nvim", as = "catppuccin" }
+  -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", {run= ':TSUpdate'}}
+  -- Harpoon
   use {"ThePrimeagen/harpoon"}
+  -- UndoTree
   use {'mbbill/undotree'}
-
+  -- LSP
   use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v3.x',
@@ -26,8 +33,16 @@ return require('packer').startup(function(use)
           {'L3MON4D3/LuaSnip'},
       }
   }
-
+  -- Easy comment block of code
   use {"tpope/vim-commentary"}
+  -- Togglable Terminal
+  use { "akinsho/toggleterm.nvim" }
+  -- Rainbow CSV
+  use {'mechatroner/rainbow_csv'}
+  -- Ranger
+  use {"francoiscabrol/ranger.vim"}
+  use {"rbgrouleff/bclose.vim"}
+
   end)
 
 
