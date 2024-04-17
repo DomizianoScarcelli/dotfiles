@@ -119,8 +119,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cafe="caffeinate -disu"
 alias diskstats="smartctl -a disk0"
-# Goes to the directory found with fzf
-alias f='fd --type directory | awk "{print $1}" | fzf | xargs cd'
+# Goes search directories into ~/Library and cd to them
+alias f='cd ~/ && cd "$(fd . ~/fzf-search-symlinks --type directory | sed "s/fzf-search-symlinks\///g" | fzf --tiebreak=length)"'
+
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
