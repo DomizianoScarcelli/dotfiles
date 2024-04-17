@@ -102,7 +102,9 @@ wifi:subscribe({"wifi_change", "system_woke", "network_update"}, function(env)
         })
     end)
   sbar.exec("ifconfig", function(result)
-        vpn_connected = string.find(result, "utun420")
+      -- utun420: Wireguard
+      -- ipsec9: IKEv2
+        vpn_connected = string.find(result, "utun420") or string.find(result, "ipsec0")
         vpn_status:set({
             icon = {
                 string = vpn_connected and icons.wifi.closed_lock or icons.wifi.opened_lock,
