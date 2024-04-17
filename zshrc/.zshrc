@@ -120,9 +120,10 @@ source $ZSH/oh-my-zsh.sh
 alias cafe="caffeinate -disu"
 alias diskstats="smartctl -a disk0"
 # Goes search directories into ~/Library and cd to them
-alias f='cd ~/ && cd "$(fd . ~/fzf-search-symlinks --type directory | sed "s/fzf-search-symlinks\///g" | fzf --tiebreak=length)"'
-
-
+iCloud="/Users/dov/Library/Mobile Documents/com~apple~CloudDocs/dovsync"
+Desktop="/Users/dov/Desktop"
+Downloads="/Users/dov/Downloads"
+alias f='cd ~ && cd "$(fd . $iCloud $Desktop $Downloads --exclude node_modules --type directory  | fzf --tiebreak=length)"'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
