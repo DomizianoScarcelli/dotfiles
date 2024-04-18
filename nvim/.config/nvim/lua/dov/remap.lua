@@ -21,3 +21,5 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<M-BS>", "<C-W>")
 
 vim.keymap.set("n", "<leader>s", vim.cmd.update)
+
+vim.keymap.set("n", "/", "/\\c")

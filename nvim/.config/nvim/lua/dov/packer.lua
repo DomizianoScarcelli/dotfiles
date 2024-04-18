@@ -39,9 +39,12 @@ return require('packer').startup(function(use)
   use { "akinsho/toggleterm.nvim" }
   -- Rainbow CSV
   use {'mechatroner/rainbow_csv'}
-  -- Ranger
-  use {"francoiscabrol/ranger.vim"}
-  use {"rbgrouleff/bclose.vim"}
+  -- Highlight Comments
+  use {
+      "folke/todo-comments.nvim",
+      requires = {
+          {'nvim-lua/plenary.nvim'}
+      }}
   -- Cheatsheet
   use {
       'sudormrfbin/cheatsheet.nvim',

@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 local builtin = require('telescope.builtin')
+local themes = require("telescope.themes")
 telescope.setup {
     defaults = {
         file_ignore_patterns = {".git/", "node_modules"},
@@ -12,8 +13,18 @@ telescope.setup {
             hidden=true
         },
         live_grep = {
-            hidden = true
-        }
+            vimgrep_arguments = {
+                'rg',
+                '--color=never',
+                '--no-heading',
+                '--with-filename',
+                '--line-number',
+                '--column',
+                '--smart-case',
+                "-u",
+                "-u",
+            }
+        },
     }
 }
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -27,5 +38,13 @@ vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
+
+vim.keymap.set('n', '<leader>/', function()
+    builtin.current_buffer_fuzzy_find(
+        themes.get_dropdown {
+            windblend = 10,
+            previewer = true,
+        })
+end, {})
 
 

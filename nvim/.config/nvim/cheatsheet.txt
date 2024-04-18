@@ -7,9 +7,23 @@ Git Commits | <leader>gc
 Git Status | <leader>gs
 
 ## toggleterm
-New Terminal | <leader>tt
-New Floating Terminal | <leader>ft
-New Lazy Git Terminal | <leader>lg
+Toggle Terminal | <C-\>
+
+## tmux
+Cycle screen | <prefix>n
+
+## nvim
+Search and replace | %s/search/replace
+
+## harpoon
+Open buffer | <C-e>
+Goto file 1 | <C-h>
+Goto file 2 | <C-j>
+Goto file 3 | <C-k>
+Goto file 4 | <C-l>
+ 
+
+
 
 
 
