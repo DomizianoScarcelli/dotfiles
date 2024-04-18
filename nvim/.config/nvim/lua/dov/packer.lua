@@ -55,6 +55,8 @@ return require('packer').startup(function(use)
           {'nvim-lua/plenary.nvim'},
       }
   }
+  -- Oil (manage files in a buffer)
+  use{"stevearc/oil.nvim"}
   end)
 
 
