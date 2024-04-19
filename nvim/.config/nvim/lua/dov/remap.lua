@@ -9,7 +9,6 @@ vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
 vim.keymap.set("n", "s$", "g$")
 
-
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -32,3 +31,10 @@ vim.keymap.set("i", "<M-BS>", "<C-W>")
 vim.keymap.set("n", "<leader>s", vim.cmd.update)
 
 vim.keymap.set("n", "/", "/\\c")
+
+vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
+vim.keymap.set("n", "L", "<CMD>bnext<cr>")
+vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<cr>")
+
+
+

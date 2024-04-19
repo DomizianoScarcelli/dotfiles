@@ -22,10 +22,7 @@ Goto file 2 | <C-j>
 Goto file 3 | <C-k>
 Goto file 4 | <C-l>
  
-
-
-
-
-
-
-
+## misc
+Go to next buffer | L
+Go to previous buffer | H
+Delete a buffer | <leader>bd

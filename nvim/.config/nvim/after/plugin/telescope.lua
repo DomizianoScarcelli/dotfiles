@@ -3,14 +3,14 @@ local builtin = require('telescope.builtin')
 local themes = require("telescope.themes")
 telescope.setup {
     defaults = {
-        file_ignore_patterns = {".git/", "node_modules"},
+        file_ignore_patterns = { ".git/", "node_modules" },
     },
     pickers = {
         find_files = {
-            hidden=true,
+            hidden = true,
         },
-        git_files= {
-            hidden=true
+        git_files = {
+            hidden = true
         },
         live_grep = {
             vimgrep_arguments = {
@@ -34,6 +34,7 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 -- end)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
+vim.keymap.set('n', '<leader>fu', builtin.buffers, {})
 
 
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
@@ -46,5 +47,3 @@ vim.keymap.set('n', '<leader>/', function()
             previewer = true,
         })
 end, {})
-
-
