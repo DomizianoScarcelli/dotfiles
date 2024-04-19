@@ -197,13 +197,14 @@ eval "$(atuin init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 #java
-export JAVA_HOME="/opt/homebrew/opt/openjdk/bin/java"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# export JAVA_HOME="/opt/homebrew/opt/openjdk/bin/java"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# # export JAVA_HOME="/opt/homebrew/Cellar/openjdk/21.0.2/bin/java"
+# export PATH=$JAVA_HOME/bin:$PATH
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

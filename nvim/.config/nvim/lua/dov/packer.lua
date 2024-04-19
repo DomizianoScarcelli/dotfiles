@@ -70,4 +70,7 @@ return require('packer').startup(function(use)
     }
     -- Soft-wrapping for text files
     use {"andrewferrier/wrapping.nvim"}
+    -- Compile on save in latex
+    use {'lervag/vimtex'}
+
 end)

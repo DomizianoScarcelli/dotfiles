@@ -32,9 +32,10 @@ lsp_zero.omnifunc.setup({
         next_item = "<C-n>",
         prev_item = "<C-p>",
     },
-    preselect = 'none',
+    preselect = 'item',
     completion = {
-        completeopt = 'menu,menuone,noinsert,noselect'
+        -- completeopt = 'menu,menuone,noinsert,noselect'
+        completeopt = 'menu,menuone'
     },
 })
 
@@ -45,7 +46,7 @@ lsp_zero.omnifunc.setup({
 require('mason').setup({})
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pylsp' },
+    ensure_installed = { 'pyright' },
     handlers = {
         --- this first function is the "default handler"
         --- it applies to every language server without a "custom handler"
