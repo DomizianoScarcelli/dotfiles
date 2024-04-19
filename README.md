@@ -15,7 +15,7 @@ I'm using:
 
 ### good nvim plugins
 
-- `oil` to edit files like a normal nvim buffer
+- `oil` to edit file tree like a normal nvim buffer
 - `lualine` to have some information at the top and bottom of the window
 - `undotree` to see a tree of my file undos
 - `telescope` as a fuzzy finder
