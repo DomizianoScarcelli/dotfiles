@@ -1,1 +1,0 @@
-- Deactivate treesitter for .csv, otherwise it conflicts with csv rainbow plugin
