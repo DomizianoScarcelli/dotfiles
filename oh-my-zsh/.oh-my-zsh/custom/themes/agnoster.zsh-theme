@@ -42,6 +42,8 @@ if [[ -z "$PRIMARY_FG" ]]; then
 fi
 
 # Characters
+DIR="\uf4d4"
+PYTHON="\ue73c"
 SEGMENT_SEPARATOR="\ue0b0"
 PLUSMINUS="\u00b1"
 BRANCH="\ue0a0"
@@ -109,14 +111,20 @@ prompt_git() {
     else
       ref="$DETACHED ${ref/.../}"
     fi
-    prompt_segment $color $PRIMARY_FG
+    prompt_segment $PRIMARY_FG $color
     print -n " $ref"
   fi
 }
 
 # Dir: current working directory
-prompt_dir() {
-  prompt_segment blue $PRIMARY_FG ' %~ '
+# prompt_dir() {
+#   prompt_segment blue $PRIMARY_FG ' ~% '
+# }
+ prompt_dir() {
+  last_folder=$(basename "$(pwd)")
+  folder_w_icon=" ${DIR} ${last_folder}"
+  # prompt_segment black blue $folder_w_icon
+  prompt_segment blue black $folder_w_icon
 }
 
 # Status:
@@ -136,9 +144,10 @@ prompt_status() {
 # Display current virtual environment
 prompt_condaenv() {
   if [[ $CONDA_DEFAULT_ENV != "base" ]]; then
-    color=cyan
-    prompt_segment $color $PRIMARY_FG
-    print -Pn " $(basename $CONDA_DEFAULT_ENV) "
+    color=green
+    prompt_segment $PRIMARY_FG $color
+    basename_conda=$(basename $CONDA_DEFAULT_ENV) 
+    print -Pn " ${PYTHON} ${basename_conda}"
   fi
 }
 
