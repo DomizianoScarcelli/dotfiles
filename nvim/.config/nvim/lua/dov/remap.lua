@@ -32,10 +32,16 @@ vim.keymap.set("n", "<leader>s", vim.cmd.update)
 
 vim.keymap.set("n", "/", "/\\c")
 
+-- Change Buffers
 vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
 vim.keymap.set("n", "L", "<CMD>bnext<cr>")
 vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
 
+-- Change tabs
+vim.keymap.set("n", "<C-h>", "<CMD>tabprevious<cr>")
+vim.keymap.set("n", "<C-l>", "<CMD>tabnext<cr>")
+vim.keymap.set("n", "<C-n>", "<CMD>tabnew<cr>")
+vim.keymap.set("n", "<leader>dt", "<CMD>tabdelete<cr>")
 
 
 

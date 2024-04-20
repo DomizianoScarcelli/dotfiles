@@ -14,15 +14,13 @@ Cycle screen | <prefix>n
 
 ## nvim
 Search and replace | %s/search/replace
-
-## harpoon
-Open buffer | <C-e>
-Goto file 1 | <C-h>
-Goto file 2 | <C-j>
-Goto file 3 | <C-k>
-Goto file 4 | <C-l>
  
 ## misc
 Go to next buffer | L
 Go to previous buffer | H
 Delete a buffer | <leader>db
+Create tab | <C-n> 
+Go to next tab | <C-l> 
+Go to previous tab | <C-h> 
+Delete a buffer | <leader>dt
+

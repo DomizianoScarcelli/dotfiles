@@ -27,6 +27,11 @@ telescope.setup {
         },
     }
 }
+
+telescope.load_extension("dir")
+
+vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 -- vim.keymap.set('n', '<leader>ps', function()

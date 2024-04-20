@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim', "BurntSushi/ripgrep"} }
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+    use {"princejoogie/dir-telescope.nvim"}
     -- Telescope Icons
     use {'nvim-tree/nvim-web-devicons'}
     -- Color Scheme
@@ -17,7 +18,7 @@ return require('packer').startup(function(use)
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", {run= ':TSUpdate'}}
     -- Harpoon
-    use {"ThePrimeagen/harpoon"}
+    -- use {"ThePrimeagen/harpoon"}
     -- UndoTree
     use {'mbbill/undotree'}
     -- LSP
