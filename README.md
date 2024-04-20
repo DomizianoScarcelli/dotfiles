@@ -10,7 +10,7 @@ I'm using:
 - `karabineer-elements` to remap keys
 - `ranger` as a terminal file manager
 - `tmux` to have multiple terminal windows in a single terminal
-- `iTerm` as a terminal emulator
+- `kitty` as a terminal emulator
 - `sketchybar` to have a customizable alternative menu bar on MacOS
 
 ### good nvim plugins
