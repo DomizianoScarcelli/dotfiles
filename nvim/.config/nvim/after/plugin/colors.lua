@@ -16,6 +16,6 @@ vim.api.nvim_set_hl(0, 'EndOfBuffer', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'EndOfFile', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'SignColumn', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'NonText', {bg='none'})
--- vim.api.nvim_set_hl(0, 'LineNr', {bg='none'})
+vim.api.nvim_set_hl(0, 'LineNr', {fg='#6c7086'})
 -- vim.api.nvim_set_hl(0, 'Folded', {bg='none'})
 
