@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim', "BurntSushi/ripgrep"} }
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-    use {"princejoogie/dir-telescope.nvim"}
     -- Telescope Icons
     use {'nvim-tree/nvim-web-devicons'}
     -- Color Scheme
