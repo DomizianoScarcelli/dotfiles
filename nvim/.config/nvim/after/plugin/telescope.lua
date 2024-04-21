@@ -15,22 +15,23 @@ local make_entry = require("telescope.make_entry")
 telescope.setup {
     defaults = {
         file_ignore_patterns = { ".git/", "node_modules" },
-        path_display={"shorten"}
+        path_display = { "shorten" },
+        mappings = {
+            n = {
+                ["cd"] = function(prompt_bufnr)
+                    local selection = require("telescope.actions.state").get_selected_entry()
+                    local dir = vim.fn.fnamemodify(selection.path, ":p:h")
+                    require("telescope.actions").close(prompt_bufnr)
+                    -- Depending on what you want put `cd`, `lcd`, `tcd`
+                    vim.cmd(string.format("Oil %s", dir))
+                end
+            },
+        }
+
     },
     pickers = {
         find_files = {
             hidden = true,
-            mappings = {
-                n = {
-                    ["cd"] = function(prompt_bufnr)
-                        local selection = require("telescope.actions.state").get_selected_entry()
-                        local dir = vim.fn.fnamemodify(selection.path, ":p:h")
-                        require("telescope.actions").close(prompt_bufnr)
-                        -- Depending on what you want put `cd`, `lcd`, `tcd`
-                        vim.cmd(string.format("Oil %s", dir))
-                    end
-                },
-            }
         },
         git_files = {
             hidden = true
@@ -70,13 +71,17 @@ local cdPicker = function(name, cmd)
 end
 
 function Cd(path)
-    local iCloud="/Users/dov/Library/Mobile\\ Documents/com~apple~CloudDocs/dovsync "
-    local Desktop="/Users/dov/Desktop "
-    local Downloads="/Users/dov/Downloads "
-    cdPicker('Cd', { vim.o.shell, '-c', "fd . " .. iCloud .. Desktop .. Downloads .. "--exclude node_modules --type directory 2>/dev/null" })
+    local iCloud = "/Users/dov/Library/Mobile\\ Documents/com~apple~CloudDocs/dovsync "
+    local Desktop = "/Users/dov/Desktop "
+    local Downloads = "/Users/dov/Downloads "
+    cdPicker('Cd',
+        { vim.o.shell, '-c', "fd . " ..
+        iCloud .. Desktop .. Downloads .. "--exclude node_modules --type directory 2>/dev/null" })
 end
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fz',
+    "<CMD>:lua require('telescope').extensions.z.z { cmd = { '/Users/dov/.config/z.lua/z.lua', '-l' } }<cr>", {})
 vim.keymap.set('n', '<leader>fd', Cd, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})

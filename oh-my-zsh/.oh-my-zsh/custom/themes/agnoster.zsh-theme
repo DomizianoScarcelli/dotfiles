@@ -3,15 +3,8 @@
 # agnoster's Theme - https://gist.github.com/3712874
 # A Powerline-inspired theme for ZSH
 #
-# # README
-#
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://gist.github.com/1595572).
-#
-# In addition, I recommend the
-# [Solarized theme](https://github.com/altercation/solarized/) and, if you're
-# using it on Mac OS X, [iTerm 2](http://www.iterm2.com/) over Terminal.app -
-# it has significantly better color fidelity.
 #
 # # Goals
 #
@@ -26,7 +19,7 @@
 
 typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
     prompt_status
-    # prompt_context
+    prompt_context
     prompt_condaenv
     prompt_dir
     prompt_git
