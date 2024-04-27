@@ -73,4 +73,8 @@ return require('packer').startup(function(use)
     use { "andrewferrier/wrapping.nvim" }
     -- Compile on save in latex
     use { 'lervag/vimtex' }
+    -- Formatter
+    use { "sbdchd/neoformat" }
+    -- Manage Registers
+    use { "tversteeg/registers.nvim" }
 end)

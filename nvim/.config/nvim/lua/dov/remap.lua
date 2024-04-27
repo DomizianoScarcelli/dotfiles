@@ -42,6 +42,7 @@ vim.keymap.set("n", "<C-h>", "<CMD>tabprevious<cr>")
 vim.keymap.set("n", "<C-l>", "<CMD>tabnext<cr>")
 vim.keymap.set("n", "<C-n>", "<CMD>tabnew<cr>")
 vim.keymap.set("n", "<leader>dt", "<CMD>tabdelete<cr>")
+vim.keymap.set("n", "<leader>fb", "<CMD>Neoformat<cr>")
 
 
 

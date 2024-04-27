@@ -124,8 +124,10 @@ iCloud="/Users/dov/Library/Mobile Documents/com~apple~CloudDocs/dovsync"
 Desktop="/Users/dov/Desktop"
 Downloads="/Users/dov/Downloads"
 alias f='cd ~ && cd "$(fd . $iCloud $Desktop $Downloads --exclude node_modules --type directory  | fzf --tiebreak=length)"'
+alias fz='cd ~ && z "$(fd . $iCloud $Desktop $Downloads --exclude node_modules --type directory  | fzf --tiebreak=length)"'
 alias fr="f && ranger"
 alias ft="f && tmux"
+alias fn="f && nvim ."
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
