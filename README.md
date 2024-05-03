@@ -17,7 +17,7 @@ I'm using:
 - `tmux` to have multiple terminal windows in a single terminal
 - `kitty` as a terminal emulator
 - `sketchybar` to have a customizable alternative menu bar on MacOS
-- `jankyboarder` to have customizable borders on the current active window
+- `jankyborders` to have customizable borders on the current active window
 
 ### good nvim plugins
 
