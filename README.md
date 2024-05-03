@@ -1,6 +1,11 @@
 These are my configuration files for MacOS.
 
-![Screenshot 2024-04-18 at 5 02 37 PM](https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/70db3cb2-14ed-4e0e-bdf9-30829b27d955)
+![Screenshot 2024-05-03 at 1 14 07 PM](https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/1831e63b-4f00-4e1d-9772-419afb83bae0)
+
+<details>
+  <summary>Old configurations</summary>
+  <img src="https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/70db3cb2-14ed-4e0e-bdf9-30829b27d955" />
+</details>
 
 I'm using:
 - `stow` to manage symlinks to have dotfiles all in one place
@@ -12,6 +17,7 @@ I'm using:
 - `tmux` to have multiple terminal windows in a single terminal
 - `kitty` as a terminal emulator
 - `sketchybar` to have a customizable alternative menu bar on MacOS
+- `jankyboarder` to have customizable borders on the current active window
 
 ### good nvim plugins
 
