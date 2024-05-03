@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-#YABAI STUFF
 
 # bsp or float (default: bsp)
 yabai -m config layout bsp
@@ -37,21 +36,10 @@ yabai -m rule --add app="^coconutBattery$" manage=off
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
-#yabai -m config window_shadow float
-yabai -m config window_opacity off
-yabai -m config window_opacity_duration 0.00
-yabai -m config active_window_opacity 1.0
-#yabai -m config normal_window_opacity    0.97
-
-## WITH SIP ENABLED (Installed Limelight seperately, Don't need this)
-#yabai -m config window_border on
-
-## WTIH SIP DISABLED (Limelight build into Yabai, enable it here)
-#yabai -m config window_border on
-#yabai -m config window_border_width 3
-#yabai -m config active_window_border_color 0xFF40FF00
-#yabai -m config normal_window_border_color 0x00FFFFFF
-#yabai -m config insert_feedback_color    0xffd75f5f
+yabai -m config window_shadow off
+# yabai -m config window_opacity off
+# yabai -m config window_opacity_duration 0.00
+# yabai -m config active_window_opacity 1.0
 
 ## some other settings
 yabai -m config auto_balance off
@@ -70,37 +58,24 @@ yabai -m config mouse_action1 move
 ## Change how yabai looks
 yabai -m config layout 
 # yabai -m config top_padding 10
-yabai -m config external_bar all:50:0
-yabai -m config bottom_padding 10
-yabai -m config left_padding 10
-yabai -m config right_padding 10
-yabai -m config window_gap 10
-# yabai -m config window_animation_duration 0.35
-
-# #Ubersicht widget bar stuff
-#yabai -m signal --add event=space_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-#yabai -m signal --add event=display_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-
-#yabai -m signal --add event=space_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
-#yabai -m signal --add event=display_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+yabai -m config external_bar all:55:0
+yabai -m config bottom_padding 20
+yabai -m config left_padding 20
+yabai -m config right_padding 20
+yabai -m config window_gap 20
 
 # signals
 # yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 # yabai -m signal --add event=space_changed action="yabai -m window --focus $(yabai -m query --windows --window | jq ".id")"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
-#testing signals
-# yabai -m signal --add event=window_destroyed action="terminal-notifier -message 'window_destroyed'"
-# yabai -m signal --add event=application_terminated action="terminal-notifier -message 'application_terminated'"
 
 ## If I close the active window, focus on any other visible window.
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
+#This needs https://github.com/FelixKratz/JankyBorders
+borders active_color=0xffcba6f7 inactive_color=0xff494d64 width=5.0 &
 echo "yabai configuration loaded.."
 
 #END

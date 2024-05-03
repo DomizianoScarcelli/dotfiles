@@ -16,7 +16,7 @@ telescope.setup {
     defaults = {
         file_ignore_patterns = { ".git/", "node_modules" },
         -- path_display = { "shorten" },
-        path_display = { "smart" },
+        -- path_display = { "smart" },
         mappings = {
             n = {
                 ["cd"] = function(prompt_bufnr)

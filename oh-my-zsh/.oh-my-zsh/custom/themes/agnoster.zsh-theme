@@ -28,11 +28,14 @@ typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
 
 ### Segment drawing
 # A few utility functions to make it easy and re-usable to draw segmented prompts
+#colors
+MAUVE="0xffcba6f7"
 
-CURRENT_BG='NONE'
+CURRENT_BG=$MAUVE
 if [[ -z "$PRIMARY_FG" ]]; then
-	PRIMARY_FG=black
+	PRIMARY_FG=$MAUVE
 fi
+
 
 # Characters
 DIR="\uf4d4"

@@ -17,6 +17,8 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' } }
+    -- Sticky Scroll
+    use {"nvim-treesitter/nvim-treesitter-context"}
     -- Harpoon
     -- use {"ThePrimeagen/harpoon"}
     -- UndoTree
