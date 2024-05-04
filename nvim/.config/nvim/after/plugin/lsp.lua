@@ -20,39 +20,34 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>td", function() vim.lsp.buf.type_definition() end, opts)
     vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
     -- vim.keymap.set("n", "<leader>fb", function() vim.lsp.buf.format() end, opts)
+    lsp_zero.omnifunc.setup({
+        autocomplete = true,
+        use_fallback = true,
+        update_on_delete = true,
+        select_behavior = 'insert',
+        mapping = {
+            confirm = '<TAB>',
+            -- next_item = "<C-n>",
+            -- prev_item = "<C-p>",
+        },
+        preselect = 'item',
+        completion = {
+            -- completeopt = 'menu,menuone,noinsert,noselect'
+            completeopt = 'menu,menuone'
+        },
+    })
 end)
-
-lsp_zero.omnifunc.setup({
-    autocomplete = true,
-    use_fallback = true,
-    update_on_delete = true,
-    select_behavior = 'insert',
-    mapping = {
-        confirm = '<TAB>',
-        -- next_item = "<C-n>",
-        -- prev_item = "<C-p>",
-    },
-    preselect = 'item',
-    completion = {
-        -- completeopt = 'menu,menuone,noinsert,noselect'
-        completeopt = 'menu,menuone'
-    },
-})
-
-
 
 -- to learn how to use mason.nvim
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 require('mason').setup({})
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pyright' },
     handlers = {
         --- this first function is the "default handler"
         --- it applies to every language server without a "custom handler"
         function(server_name)
-            local conf = {}
-            return require('lspconfig')[server_name].setup(conf)
+            return require('lspconfig')[server_name].setup(capabilities)
         end,
     },
 })
