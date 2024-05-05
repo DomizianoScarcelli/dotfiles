@@ -15,10 +15,12 @@ return {
     bg = 0xff1d1d2b,
     border = 0xff494d64 ,
   },
+
   popup = {
     bg = 0xff1d1d2b,
     border = 0xffc6a0f7
   },
+
   bg1 = 0xff313244,
   bg2 = 0xff45475a,
 
