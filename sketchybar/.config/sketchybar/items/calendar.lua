@@ -41,7 +41,7 @@ local clock = sbar.add("item", {
     padding_right = 4,
     font = { family = settings.font.numbers, size = 12.0},
   },
-  padding_left = 10,
+  padding_left = 16,
   position = "right",
   update_freq = 5,
   y_offset = -5,

@@ -79,4 +79,6 @@ return require('packer').startup(function(use)
     use { "sbdchd/neoformat" }
     -- Manage Registers
     use { "tversteeg/registers.nvim" }
+    -- Visualize git conflicts
+    use {"akinsho/git-conflict.nvim"}
 end)
