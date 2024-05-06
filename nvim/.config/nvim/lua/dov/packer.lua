@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' } }
     -- Sticky Scroll
-    use {"nvim-treesitter/nvim-treesitter-context"}
+    use { "nvim-treesitter/nvim-treesitter-context" }
     -- Harpoon
     -- use {"ThePrimeagen/harpoon"}
     -- UndoTree
@@ -80,5 +80,9 @@ return require('packer').startup(function(use)
     -- Manage Registers
     use { "tversteeg/registers.nvim" }
     -- Visualize git conflicts
-    use {"akinsho/git-conflict.nvim"}
+    use { "akinsho/git-conflict.nvim" }
+    -- Custom startup dashboard
+    use { "nvimdev/dashboard-nvim",
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
 end)
