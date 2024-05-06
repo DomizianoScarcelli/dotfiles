@@ -1,15 +1,109 @@
 local db = require("dashboard")
+local version = vim.version()
+
+local header = {
+    '                                      ',
+    '                                      ',
+    '     ⠀⠀⠀⠀⠀⠀⠀⡴⠞⠉⢉⣭⣿⣿⠿⣳⣤⠴⠖⠛⣛⣿⣿⡷⠖⣶⣤⡀⠀⠀⠀  ',
+    '   ⠀⠀⠀⠀⠀⠀⠀⣼⠁⢀⣶⢻⡟⠿⠋⣴⠿⢻⣧⡴⠟⠋⠿⠛⠠⠾⢛⣵⣿⠀⠀⠀⠀  ',
+    '   ⣼⣿⡿⢶⣄⠀⢀⡇⢀⡿⠁⠈⠀⠀⣀⣉⣀⠘⣿⠀⠀⣀⣀⠀⠀⠀⠛⡹⠋⠀⠀⠀⠀  ',
+    '   ⣭⣤⡈⢑⣼⣻⣿⣧⡌⠁⠀⢀⣴⠟⠋⠉⠉⠛⣿⣴⠟⠋⠙⠻⣦⡰⣞⠁⢀⣤⣦⣤⠀  ',
+    '   ⠀⠀⣰⢫⣾⠋⣽⠟⠑⠛⢠⡟⠁⠀⠀⠀⠀⠀⠈⢻⡄⠀⠀⠀⠘⣷⡈⠻⣍⠤⢤⣌⣀  ',
+    '   ⢀⡞⣡⡌⠁⠀⠀⠀⠀⢀⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⢿⡀⠀⠀⠀⠸⣇⠀⢾⣷⢤⣬⣉  ',
+    '   ⡞⣼⣿⣤⣄⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⣿⠀⠸⣿⣇⠈⠻  ',
+    '   ⢰⣿⡿⢹⠃⠀⣠⠤⠶⣼⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⣿⠀⠀⣿⠛⡄⠀  ',
+    '   ⠈⠉⠁⠀⠀⠀⡟⡀⠀⠈⡗⠲⠶⠦⢤⣤⣤⣄⣀⣀⣸⣧⣤⣤⠤⠤⣿⣀⡀⠉⣼⡇⠀  ',
+    '   ⣿⣴⣴⡆⠀⠀⠻⣄⠀⠀⠡⠀⠀⠀⠈⠛⠋⠀⠀⠀⡈⠀⠻⠟⠀⢀⠋⠉⠙⢷⡿⡇⠀  ',
+    '   ⣻⡿⠏⠁⠀⠀⢠⡟⠀⠀⠀⠣⡀⠀⠀⠀⠀⠀⢀⣄⠀⠀⠀⠀⢀⠈⠀⢀⣀⡾⣴⠃⠀  ',
+    '   ⢿⠛⠀⠀⠀⠀⢸⠁⠀⠀⠀⠀⠈⠢⠄⣀⠠⠼⣁⠀⡱⠤⠤⠐⠁⠀⠀⣸⠋⢻⡟⠀⠀  ',
+    '   ⠈⢧⣀⣤⣶⡄⠘⣆⠀⠀⠀⠀⠀⠀⠀⢀⣤⠖⠛⠻⣄⠀⠀⠀⢀⣠⡾⠋⢀⡞⠀⠀⠀  ',
+    '   ⠀⠀⠻⣿⣿⡇⠀⠈⠓⢦⣤⣤⣤⡤⠞⠉⠀⠀⠀⠀⠈⠛⠒⠚⢩⡅⣠⡴⠋⠀⠀⠀⠀  ',
+    '   ⠀⠀⠀⠈⠻⢧⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣻⠿⠋⠀⠀⠀⠀⠀⠀  ',
+    '   ⠀⠀⠀⠀⠀⠀⠉⠓⠶⣤⣄⣀⡀⠀⠀⠀⠀⠀⢀⣀⣠⡴⠖⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀  ',
+    '                                      ',
+    '                                      ',
+    "N E O V I M - v " .. version.major .. "." .. version.minor,
+    '                                      ',
+    '                                      ',
+}
+
+local center = {
+    {
+        desc = "Find File                     ",
+        keymap = "",
+        key = "f",
+        icon = "  ",
+        action = "Telescope find_files",
+    },
+    {
+        desc = "Recents",
+        keymap = "",
+        key = "r",
+        icon = "  ",
+        action = "Telescope oldfiles",
+    },
+
+    {
+        desc = "Browse Files",
+        keymap = "",
+        key = "b",
+        icon = "  ",
+        action = "Oil",
+    },
+
+
+    -- {
+    --     desc = "Load Last Session",
+    --     keymap = "",
+    --     key = "L",
+    --     icon = "  ",
+    --     action = "SessionLoad",
+    -- },
+
+    -- {
+    --     desc = "Update Plugins",
+    --     keymap = "",
+    --     key = "u",
+    --     icon = "  ",
+    --     action = "Lazy update",
+    -- },
+
+    {
+        desc = "Manage Extensions",
+        keymap = "",
+        key = "e",
+        icon = "  ",
+        action = "Mason",
+    },
+
+    {
+        desc = "Config",
+        keymap = "",
+        key = "c",
+        icon = "  ",
+        action = "Telescope find_files cwd=~/.dotfiles/nvim/.config/nvim",
+    },
+    {
+        desc = "Exit",
+        keymap = "",
+        key = "q",
+        icon = "  ",
+        action = "exit",
+    },
+}
 
 -- HYPER setup
 db.setup({
-    theme = 'hyper',
+    theme = 'doom',
     config = {
-        week_header = {
-            enable = true,
-        },
-        shortcut = {
-        },
+        header = header,
+        center = center
     },
+    footer = function()
+        return {
+            "Daje roma"
+        }
+    end,
 })
 
 -- Opens nvim dashboard when the last buffer is closed, instead of opening an empty buffer
