@@ -1,0 +1,13 @@
+#urlbar,
+.searchbar-textbox 
+.PersonalToolbar{
+    font-size: 13px !important;
+    font-family: "JetBrainsMono Nerd Font Mono";
+}
+
+.bookmark-item {
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-size: 11px !important;
+}
+
+}
