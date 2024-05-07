@@ -42,14 +42,15 @@ local center = {
         icon = "  ",
         action = "Telescope oldfiles",
     },
-
-    {
-        desc = "Browse Files",
-        keymap = "",
-        key = "b",
-        icon = "  ",
-        action = "Oil",
-    },
+    
+    --TODO: this causes an error
+    -- {
+    --     desc = "Browse Files",
+    --     keymap = "",
+    --     key = "b",
+    --     icon = "  ",
+    --     action = "Oil",
+    -- },
 
 
     -- {
@@ -99,32 +100,30 @@ db.setup({
         header = header,
         center = center
     },
-    footer = function()
-        return {
-            "Daje roma"
-        }
-    end,
+    footer = {},
 })
 
--- Opens nvim dashboard when the last buffer is closed, instead of opening an empty buffer
-vim.defer_fn(
-    function()
-        vim.api.nvim_create_autocmd(
-            'BufDelete',
-            {
-                group    = vim.api.nvim_create_augroup('open-dashboard-after-last-buffer-close', { clear = true }),
-                callback = function(event)
-                    for buf = 1, vim.fn.bufnr('$') do
-                        if buf ~= event.buf and vim.fn.buflisted(buf) == 1 then
-                            if vim.api.nvim_buf_get_name(buf) ~= '' and vim.bo[buf].filetype ~= 'dashboard' then
-                                return
-                            end
-                        end
-                    end
-                    vim.cmd('Dashboard')
-                end,
-            }
-        )
-    end,
-    0
-)
+-- TODO: this causes an error
+--
+-- -- -- Opens nvim dashboard when the last buffer is closed, instead of opening an empty buffer
+-- vim.defer_fn(
+--     function()
+--         vim.api.nvim_create_autocmd(
+--             'BufDelete',
+--             {
+--                 group    = vim.api.nvim_create_augroup('open-dashboard-after-last-buffer-close', { clear = true }),
+--                 callback = function(event)
+--                     for buf = 1, vim.fn.bufnr('$') do
+--                         if buf ~= event.buf and vim.fn.buflisted(buf) == 1 then
+--                             if vim.api.nvim_buf_get_name(buf) ~= '' and vim.bo[buf].filetype ~= 'dashboard' then
+--                                 return
+--                             end
+--                         end
+--                     end
+--                     vim.cmd('Dashboard')
+--                 end,
+--             }
+--         )
+--     end,
+--     0
+-- )
