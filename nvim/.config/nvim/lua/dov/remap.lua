@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 -- If using the default NetRw file explorer
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- If using oil.nvim
-vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>")
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil --float<CR>")
 
 -- To use j, k also in soft wrap mode
 vim.keymap.set("n", "j", "gj")
@@ -36,13 +36,15 @@ vim.keymap.set("n", "/", "/\\c")
 vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
 vim.keymap.set("n", "L", "<CMD>bnext<cr>")
 vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
+vim.keymap.set("n", "<leader>do", "<CMD>:%%bd|e#|bd#<cr>")
 
 -- Change tabs
 vim.keymap.set("n", "<C-h>", "<CMD>tabprevious<cr>")
 vim.keymap.set("n", "<C-l>", "<CMD>tabnext<cr>")
 vim.keymap.set("n", "<C-n>", "<CMD>tabnew<cr>")
 vim.keymap.set("n", "<leader>dt", "<CMD>tabdelete<cr>")
-vim.keymap.set("n", "<leader>fb", "<CMD>Neoformat<cr>")
 
 
-
+-- Open in finder
+vim.keymap.set("n", "<leader>of", "<CMD>!cd .. && open %:p:h<cr>")
+vim.keymap.set("n", "<leader>pd", "<CMD>!echo %:p:h<cr>")

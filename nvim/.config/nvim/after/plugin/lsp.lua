@@ -20,6 +20,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>td", function() vim.lsp.buf.type_definition() end, opts)
     vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "<leader>fb", function() vim.lsp.buf.format() end, opts)
+
     lsp_zero.omnifunc.setup({
         autocomplete = true,
         use_fallback = true,
