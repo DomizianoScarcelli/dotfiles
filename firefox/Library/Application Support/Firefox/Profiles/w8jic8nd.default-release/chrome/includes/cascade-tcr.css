@@ -2,7 +2,6 @@
 #nav-bar { width: 100vw !important; }
 
 
-
 #browser { position: relative; }
 #sidebar-box[sidebarcommand*="tabcenter"] #sidebar-header { display: none; }
 

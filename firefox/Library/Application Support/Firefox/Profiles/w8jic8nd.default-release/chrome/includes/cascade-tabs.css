@@ -153,9 +153,4 @@
 .tabbrowser-tab[selected] .tab-content {
     background-color: var(--uc-highlight-colour) !important;
 }
-.tabbrowser-tabs > . 
-#TabsToolbar > . {
-    font-family: "JetBrainsMono Nerd Font Mono" !important;
-    font-size: 11px !important; 
-}
 }
