@@ -43,8 +43,7 @@ body {
 h1 {
     color: var(--header-color);
     font-family: 'JetBrains Mono';
-    font-size: 5rem;
-    /* margin-right: 14vh; */
+    font-size: 2.75rem;
 }
 
 .status-strip {
@@ -62,9 +61,13 @@ span {
 
 .card-container {
     height: 30vh;
+    min-width: 80%; 
+    /* width: 60vw; */
     display: flex;
     flex-flow: row wrap;
-    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 4rem;
 }
 
 .container {
@@ -121,7 +124,7 @@ img {
 }
 
 #searchbar {
-    width: 40rem;
+    width: 80%;
     height: 2rem;
     background-color: var(--searchbar-color);
     color: var(--link-color);
@@ -135,4 +138,11 @@ img {
 
 #searchbar:focus {
     outline: none
+}
+
+.ascii-art {
+    padding-bottom:1rem;
+    font-size:6px;
+    color: var(--title-color);
+    white-space: pre;
 }

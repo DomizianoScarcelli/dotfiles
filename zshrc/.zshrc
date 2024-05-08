@@ -217,3 +217,6 @@ export DEFAULT_USER="dov"
 eval "$(zoxide init zsh)"
 eval "$(lua /Users/dov/.config/z.lua/z.lua --init zsh)"
 
+
+# Created by `pipx` on 2024-05-08 18:58:53
+export PATH="$PATH:/Users/dov/.local/bin"
