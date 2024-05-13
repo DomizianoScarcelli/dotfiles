@@ -1,9 +1,7 @@
-console.log("loaded searchbar.js")
 const searchbar = document.getElementById("searchbar")
-console.log(searchbar)
+searchbar.focus()
 searchbar.addEventListener("keypress", (e) => {
     if (e.key == "Enter") {
-        console.log("enter pressed")
         const query = searchbar.value
         if (query.endsWith("!s") || query.startsWith("!s")) {
             startPageSearch(query)

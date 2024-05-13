@@ -73,6 +73,9 @@ volume_percent:subscribe("volume_change", function(env)
         local device = result:sub(1, -2)
         local icon = icons.devices.headphones
         local volume = tonumber(env.INFO)
+        if string.find(string.lower(device), "airpods") then
+            icon = icons.devices.airpods
+        end
         if device == "MacBook Air Speakers" then
             icon = icons.volume._0
             if volume > 60 then
