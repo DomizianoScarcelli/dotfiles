@@ -83,11 +83,5 @@ return require('packer').startup(function(use)
     use { "nvimdev/dashboard-nvim",
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    -- Obsidian
-    -- use { "epwalsh/obsidian.nvim",
-    --     tag = "*", -- recommended, use latest release instead of latest commit
-    --     requires = {
-    --         "nvim-lua/plenary.nvim"
-    --     }
-    -- }
+    use {'wakatime/vim-wakatime'}
 end)

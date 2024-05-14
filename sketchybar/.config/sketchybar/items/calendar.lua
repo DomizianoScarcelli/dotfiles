@@ -52,11 +52,7 @@ clock:subscribe({ "forced", "routine", "system_woke", "mouse.entered", "mouse.ex
   clock:set({ label = os.date("%I:%M %p") })
 end)
 
--- clock:subscribe("mouse.clicked", function(env)
---   sbar.exec("open -a Calendar.app")
--- end)
-
--- local calendar = sbar.add("bracket", {
---   date.name,
---   clock.name,
--- }, {background = { color = colors.bg1 }})
+clock:subscribe("mouse.clicked", function(env)
+    -- control + command + `
+    sbar.exec('osascript -e \'tell application "System Events" to key code 50 using {control down, command down}\'')
+end)

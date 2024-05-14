@@ -35,8 +35,8 @@ yabai -m rule --add app="^coconutBattery$" manage=off
 # yabai -m config focus_follows_mouse     on
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
-yabai -m config window_topmost off
-yabai -m config window_shadow off
+# yabai -m config window_topmost off
+# yabai -m config window_shadow off
 # yabai -m config window_opacity off
 # yabai -m config window_opacity_duration 0.00
 # yabai -m config active_window_opacity 1.0
@@ -75,7 +75,8 @@ yabai -m signal --add event=window_destroyed action="yabai -m query --windows --
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
 #This needs https://github.com/FelixKratz/JankyBorders
-borders active_color=0xffcba6f7 inactive_color=0xff494d64 width=5.0 blacklist="Todoist" &
+# borders active_color=0xffcba6f7 inactive_color=0xff494d64 width=5.0 blacklist="Todoist" &
+borders active_color=0xffcba6f7 inactive_color=0xff494d64 width=7.0 blacklist="Todoist" &
 # borders active_color=0xffcba6f7 inactive_color=0xff494d64 width=5.0 whitelist="kitty" &
 echo "yabai configuration loaded.."
 

@@ -14,7 +14,15 @@ Cycle screen | <prefix>n
 
 ## nvim
 Search and replace | %s/search/replace
- 
+
+## vim-split-panes
+
+Increase/decrease height | <Ctrl+W> +/- (ex. 20<C-w>+)
+Increase/decrease width | <Ctrl+W> >/< (ex. 30<C-w><)
+Set height | <Ctrl+W> _ (ex. 50<C-w>_)
+Set width |<Ctrl+W> | (ex. 50<C-w>|)
+Equalize width and height of all windows | <Ctrl+W> = 
+
 ## misc
 Go to next buffer | L
 Go to previous buffer | H
@@ -23,4 +31,5 @@ Create tab | <C-n>
 Go to next tab | <C-l> 
 Go to previous tab | <C-h> 
 Delete a buffer | <leader>dt
+
 
