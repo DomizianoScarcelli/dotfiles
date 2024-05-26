@@ -1,9 +1,16 @@
 These are my configuration files for MacOS.
 
-![Screenshot 2024-05-03 at 1 14 07 PM](https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/1831e63b-4f00-4e1d-9772-419afb83bae0)
+![Screenshot 2024-05-26 at 6 36 23 PM](https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/250b4576-e828-48ae-8f3b-7b6c43bdfdb1)
+
 
 <details>
-  <summary>Old configurations</summary>
+  <summary>Old configurations (I like to change the look pretty frequently lol)</summary>
+  Commit <a href="https://github.com/DomizianoScarcelli/dotfiles/tree/3a5495e746619e2f5874a3f6aea0df54599939dc)">
+    3a5495e746619e2f5874a3f6aea0df54599939dc
+  </a>
+    <img src="https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/1831e63b-4f00-4e1d-9772-419afb83bae0">
+  
+  Commit ???
   <img src="https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/70db3cb2-14ed-4e0e-bdf9-30829b27d955" />
 </details>
 
