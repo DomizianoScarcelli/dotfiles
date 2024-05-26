@@ -1,4 +1,4 @@
-return {
+local colors =  {
   black = 0xff181926,
   white = 0xffcdd6f4,
   red = 0xffcba6f7,
@@ -29,3 +29,8 @@ return {
     return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
   end,
 }
+
+colors.bar.bg = colors.with_alpha(colors.bar.bg, 0.4)
+colors.bg1 = colors.with_alpha(colors.bg1, 0.4)
+colors.bg2 = colors.transparent
+return colors
