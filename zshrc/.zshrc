@@ -129,6 +129,9 @@ alias fr="f && ranger"
 alias ft="f && tmux"
 alias fn="f && nvim ."
 
+# Pomodoro timer (source https://gist.github.com/bashbunni/f6b04fc4703903a71ce9f70c58345106)
+alias pomodoro="~/.dotfiles/scripts/pomodoro.sh"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/dov/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

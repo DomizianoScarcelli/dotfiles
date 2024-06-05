@@ -1,4 +1,5 @@
 local lsp_zero = require('lsp-zero')
+local cmp = require('cmp')
 
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
@@ -21,21 +22,19 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "<leader>fb", function() vim.lsp.buf.format() end, opts)
 
+
     lsp_zero.omnifunc.setup({
         autocomplete = true,
         use_fallback = true,
         update_on_delete = true,
         select_behavior = 'insert',
-        mapping = {
-            confirm = '<TAB>',
-            -- next_item = "<C-n>",
-            -- prev_item = "<C-p>",
-        },
-        preselect = 'item',
-        completion = {
-            -- completeopt = 'menu,menuone,noinsert,noselect'
-            completeopt = 'menu,menuone'
-        },
+        -- mappings = {
+        --     confirm = "<TAB>"
+        -- },
+        -- preselect = cmp.PreselectMode.Item,
+        -- completion = {
+        --     completeopt = 'menu,menuone,noinsert'
+        -- },
     })
 end)
 

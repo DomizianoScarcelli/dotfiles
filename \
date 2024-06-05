@@ -13,15 +13,14 @@ cmp.setup {
         {
 
             ["<Tab>"] = cmp.mapping(
-                function()
+                function(fallback)
                     if cmp.visible() then
                         cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
                     elseif require("luasnip").expand_or_jumpable() then
                         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
                             "")
                     else
-                        -- tab is broken idk why, but shift tab in this context works just like tab
-                        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<S-Tab>',true,false,true),'m',true)
+                        vim.fn.feedkeys("\\<S-Tab>")
                     end
                 end, { "i", "s" })
         }
