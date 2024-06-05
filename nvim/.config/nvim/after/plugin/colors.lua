@@ -7,6 +7,7 @@ require("catppuccin").setup(
 vim.cmd.colorscheme(color)
 
 vim.api.nvim_set_hl(0, 'Normal', {bg='none'})
+-- vim.api.nvim_set_hl(0, 'Visual', {bg=0x33f5e0dc, fg="#9399b2"})
 vim.api.nvim_set_hl(0, 'NormalFloat', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'TelescopeNormal', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'TelescopeBorder', {bg='none'})
@@ -18,4 +19,5 @@ vim.api.nvim_set_hl(0, 'EndOfBuffer', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'NonText', {bg='none'})
 vim.api.nvim_set_hl(0, 'LineNr', {fg='#6c7086'})
 -- vim.api.nvim_set_hl(0, 'Folded', {bg='none'})
-
+vim.api.nvim_set_hl(0, "Comment", { fg = "#7f849c"})
+vim.api.nvim_set_hl(0, "@comment", { link = "Comment"})

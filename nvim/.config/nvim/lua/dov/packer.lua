@@ -84,4 +84,6 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
     use {'wakatime/vim-wakatime'}
+    -- Better jump to word
+    use {"ggandor/leap.nvim"}
 end)

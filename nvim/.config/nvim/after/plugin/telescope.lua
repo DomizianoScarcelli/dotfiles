@@ -88,6 +88,7 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>fu', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fc', builtin.commands, {})
 
 
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})

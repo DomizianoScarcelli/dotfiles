@@ -81,8 +81,8 @@ local function animate_detail(detail)
     if interrupt > 0 and (not detail) then return end
 
     sbar.animate("tanh", 30, function()
-        media_artist:set({ label = { width = detail and "dynamic" or 0 } })
-        media_title:set({ label = { width = detail and "dynamic" or 0 } })
+        media_artist:set({ label = { width = detail or 0 } })
+        media_title:set({ label = { width = detail or 0 } })
     end)
 end
 
@@ -106,18 +106,13 @@ media_cover:subscribe("media_change", function(env)
 end)
 
 media_cover:subscribe("mouse.entered", function(env)
+    media_cover:set({ popup = { drawing = "toggle" } })
     interrupt = interrupt + 1
     animate_detail(true)
 end)
 
-media_cover:subscribe("mouse.exited", function(env)
-    animate_detail(false)
-end)
-
-media_cover:subscribe("mouse.entered", function(env)
-    media_cover:set({ popup = { drawing = "toggle" } })
-end)
 
 media_title:subscribe("mouse.exited.global", function(env)
     media_cover:set({ popup = { drawing = false } })
+    animate_detail(false)
 end)
