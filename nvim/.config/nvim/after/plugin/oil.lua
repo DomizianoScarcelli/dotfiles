@@ -13,11 +13,11 @@ require("oil").setup({
         show_hidden = true
     },
     float = {
-    -- Padding around the floating window
-    padding = 4,
-    max_width = 0,
-    max_height = 0,
-  },
+        -- Padding around the floating window
+        padding = 4,
+        max_width = 0,
+        max_height = 0,
+    },
     keymaps = {
         ["g?"] = "actions.show_help",
         ["<CR>"] = "actions.select",
@@ -36,5 +36,6 @@ require("oil").setup({
         ["gx"] = "actions.open_external",
         ["g."] = "actions.toggle_hidden",
         ["g\\"] = "actions.toggle_trash",
+        -- ["gp"] = require('image_preview').PreviewImageOil()
     },
 })

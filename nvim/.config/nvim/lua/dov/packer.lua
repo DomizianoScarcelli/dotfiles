@@ -83,7 +83,7 @@ return require('packer').startup(function(use)
     use { "nvimdev/dashboard-nvim",
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    use {'wakatime/vim-wakatime'}
+    use { 'wakatime/vim-wakatime' }
     -- Better jump to word
-    use {"ggandor/leap.nvim"}
+    use { "ggandor/leap.nvim" }
 end)
