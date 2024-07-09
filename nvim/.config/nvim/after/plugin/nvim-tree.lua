@@ -25,7 +25,7 @@ nvim_tree.setup({
     view = {
         relativenumber = true,
         float = {
-            enable = true,
+            enable = false, -- Strange error with telescope at start if float
             open_win_config = {
                 relative = "editor",
                 border = "double",
