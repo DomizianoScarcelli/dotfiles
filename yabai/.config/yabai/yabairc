@@ -22,8 +22,10 @@ yabai -m rule --add app="^Stats$" manage=off
 # yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="Fantastical" manage=off
+yabai -m rule --add app="Calendar" manage=off
 # yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
 # yabai -m rule --add app="^LinearMouse$" manage=off
 # yabai -m rule --add app="^DropPoint$" manage=off
 # yabai -m rule --add app="^FaceTime$" manage=off

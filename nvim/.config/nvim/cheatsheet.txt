@@ -31,5 +31,11 @@ Create tab | <C-n>
 Go to next tab | <C-l> 
 Go to previous tab | <C-h> 
 Delete a buffer | <leader>dt
+Flip v-split windows | <C-w><C-x>
+Rotate windows | <C-w><C-r>
+
+## file-explorer
+Open Neovim tree | <leader>tr
+Open Oil | <leader>pv
 
 

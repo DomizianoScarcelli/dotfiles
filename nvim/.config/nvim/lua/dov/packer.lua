@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
         }
     }
     -- Oil (manage files in a buffer)
-    use { "stevearc/oil.nvim" }
+    -- use { "stevearc/oil.nvim" }
     -- Lualine (pretty statusbar)
     use {
         'nvim-lualine/lualine.nvim',
@@ -83,7 +83,8 @@ return require('packer').startup(function(use)
     use { "nvimdev/dashboard-nvim",
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    use { 'wakatime/vim-wakatime' }
     -- Better jump to word
     use { "ggandor/leap.nvim" }
+    use {"nvim-tree/nvim-tree.lua"}
+    use {'f-person/git-blame.nvim'}
 end)

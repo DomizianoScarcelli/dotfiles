@@ -12,8 +12,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Uses oh-my-posh prompt and theme
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_mocha.omp.json)"
-
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/themes/catppuccin.json)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
