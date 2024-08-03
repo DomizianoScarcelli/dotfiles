@@ -87,4 +87,12 @@ return require('packer').startup(function(use)
     use { "ggandor/leap.nvim" }
     use {"nvim-tree/nvim-tree.lua"}
     use {'f-person/git-blame.nvim'}
+    -- Use local config on remote machines
+    use {
+    'chipsenkbeil/distant.nvim',
+    branch = 'v0.3',
+    config = function()
+        require('distant'):setup()
+    end
+}
 end)
