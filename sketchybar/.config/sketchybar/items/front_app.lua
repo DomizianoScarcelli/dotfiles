@@ -1,4 +1,5 @@
 local settings = require("settings")
+local colors = require("colors")
 
 local front_app = sbar.add("item", "front_app", {
   display = "active",
@@ -8,6 +9,7 @@ local front_app = sbar.add("item", "front_app", {
       style = settings.font.style_map["Black"],
       size = 12.0,
     },
+    color = colors.bar.border,
   },
   position="center",
   updates = true,

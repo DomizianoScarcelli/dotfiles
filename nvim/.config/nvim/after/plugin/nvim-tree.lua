@@ -16,7 +16,7 @@ local function calculate_center()
     local height = total_height - 20 -- Adjust height to a more reasonable value
     local row = math.floor((total_height - height) / 2)
     local col = math.floor((total_width - width) / 2)
-    return {row = row, col = col, width = width, height = height}
+    return { row = row, col = col, width = width, height = height }
 end
 
 local center = calculate_center()
@@ -36,10 +36,12 @@ nvim_tree.setup({
             }
         }
     },
+    trash = {
+        cmd = "trash"
+    },
     actions = {
         open_file = {
             quit_on_open = true
         }
     },
 })
-

@@ -108,10 +108,10 @@ wifi:subscribe({"wifi_change", "system_woke", "network_update"}, function(env)
         vpn_status:set({
             icon = {
                 string = vpn_connected and icons.wifi.closed_lock or icons.wifi.opened_lock,
-                color = vpn_connected and colors.green or colors.red,
+                color = vpn_connected and colors.green or colors.blue,
             },
             label = {
-                color = vpn_connected and colors.green or colors.red
+                color = vpn_connected and colors.green or colors.blue
             }
         })
     end)

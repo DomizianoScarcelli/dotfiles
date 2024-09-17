@@ -14,7 +14,7 @@ for i = 1, 10, 1 do
       padding_left = 15,
       padding_right = 8,
       color = colors.white,
-      highlight_color = colors.red,
+      highlight_color = colors.mauve,
     },
     label = {
       padding_right = 20,
@@ -97,7 +97,7 @@ local spaces_indicator = sbar.add("item", {
   icon = {
     padding_left = 8,
     padding_right = 9,
-    color = colors.grey,
+    color = colors.green,
     string = icons.switch.on,
   },
   label = {
@@ -108,8 +108,8 @@ local spaces_indicator = sbar.add("item", {
     color = colors.bg1,
   },
   background = {
-    color = colors.with_alpha(colors.grey, 0.0),
-    border_color = colors.with_alpha(colors.bg1, 0.0),
+    color = colors.with_alpha(colors.green, 0.0),
+    border_color = colors.with_alpha(colors.mauve, 0.0),
   }
 })
 
