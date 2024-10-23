@@ -114,6 +114,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cafe="caffeinate -disu"
 alias diskstats="smartctl -a disk0"
+#TODO: escape the " char
+alias countlines='find . -name ".$1" | sed "s/.*\"&"/" | xargs wc -l'
 # Goes search directories into ~/Library and cd to them
 iCloud="/Users/dov/Library/Mobile Documents/com~apple~CloudDocs/dovsync"
 Desktop="/Users/dov/Desktop"

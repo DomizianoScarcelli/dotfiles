@@ -24,6 +24,7 @@ local center = calculate_center()
 nvim_tree.setup({
     view = {
         relativenumber = true,
+        adaptive_size=true,
         float = {
             enable = false, -- Strange error with telescope at start if float
             open_win_config = {

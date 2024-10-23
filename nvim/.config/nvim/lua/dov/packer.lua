@@ -81,18 +81,30 @@ return require('packer').startup(function(use)
     use { "akinsho/git-conflict.nvim" }
     -- Custom startup dashboard
     use { "nvimdev/dashboard-nvim",
-        requires = { 'nvim-tree/nvim-web-devicons' }
-    }
-    -- Better jump to word
-    use { "ggandor/leap.nvim" }
-    use {"nvim-tree/nvim-tree.lua"}
-    use {'f-person/git-blame.nvim'}
-    -- Use local config on remote machines
-    use {
+    requires = { 'nvim-tree/nvim-web-devicons' }
+}
+-- Better jump to word
+use { "ggandor/leap.nvim" }
+use { "nvim-tree/nvim-tree.lua" }
+use { 'f-person/git-blame.nvim' }
+-- Use local config on remote machines
+use {
     'chipsenkbeil/distant.nvim',
     branch = 'v0.3',
     config = function()
         require('distant'):setup()
-    end
-}
+    end }
+    -- Documentation Generator
+    use {
+        'kkoomen/vim-doge',
+        run = ':call doge#install()'
+    }
+    use{'luizribeiro/vim-cooklang', ft='cook' }
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    }
 end)

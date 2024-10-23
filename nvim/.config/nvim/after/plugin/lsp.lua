@@ -43,11 +43,35 @@ end)
 require('mason').setup({})
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup({
+    ensure_installed = { 'pylsp' }, -- Install pylsp if it's not already installed
     handlers = {
-        --- this first function is the "default handler"
-        --- it applies to every language server without a "custom handler"
         function(server_name)
-            return require('lspconfig')[server_name].setup(capabilities)
+            -- Default handler for any language server without a custom handler
+            require('lspconfig')[server_name].setup({
+                capabilities = capabilities,
+                on_attach = lsp_zero.on_attach,
+            })
+        end,
+        -- Add custom handler for pylsp
+        ['pylsp'] = function()
+            require('lspconfig').pylsp.setup({
+                settings = {
+                    pylsp = {
+                        plugins = {
+                            rope_autoimport = {
+                                enabled = true,                    -- Enable rope_autoimport
+                                completions = { enabled = true },  -- Enable completions
+                                code_actions = { enabled = true }, -- Enable code actions
+                            },
+                            isort = {
+                                enabled = true, -- Optionally enable isort for organizing imports
+                            },
+                        },
+                    },
+                },
+                capabilities = capabilities,
+                on_attach = lsp_zero.on_attach,
+            })
         end,
     },
 })

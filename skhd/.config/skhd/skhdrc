@@ -44,22 +44,12 @@ hyper - f: yabai -m window --toggle zoom-fullscreen
 # lshift + alt - r: yabai --service-stop; yabai --service-start
 
 #Open terminal in the current window
-hyper - t: open /Applications/iTerm.app && osascript -e 'tell application "Finder" to set currentFolder to POSIX path of (target of front Finder window as alias)' -e 'tell application "iTerm" to tell current session of current window to write text "cd " & quoted form of currentFolder'
+hyper - t: open /Applications/kitty.app && osascript -e 'tell application "Finder" to set currentFolder to POSIX path of (target of front Finder window as alias)' -e 'tell application "kitty" to tell current session of current window to write text "cd " & quoted form of currentFolder'
 
-# Move current window to space 1 and focus on it
-cmd - 1: yabai -m window --space 1
-
-# Move current window to space 2 and focus on it
-cmd - 2: yabai -m window --space 2
-
-# Move current window to space 3 and focus on it
-cmd - 3: yabai -m window --space 3
-
-# Move current window to space 4 and focus on it
-cmd - 4: yabai -m window --space 4
-
-# Move current window to space 5 and focus on it
-cmd - 5: yabai -m window --space 5
-
-# Move current window to space 6 and focus on it
-cmd - 6: yabai -m window --space 6
+# Move current window to space 1
+# hyper - 1: yabai -m window --space 1
+# hyper - 2: yabai -m window --space 2
+# hyper - 3: yabai -m window --space 3
+# hyper - 4: yabai -m window --space 4
+# hyper - 5: yabai -m window --space 5
+# hyper - 6: yabai -m window --space 6
