@@ -13,9 +13,9 @@ return require('packer').startup(function(use)
     use { "nvim-telescope/telescope-z.nvim" }
     -- Telescope Icons
     use { 'nvim-tree/nvim-web-devicons' }
-    -- Color Scheme
+    -- Color Schemes
     use { "catppuccin/nvim", as = "catppuccin" }
-    use {'jim-at-jibba/ariake-vim-colors'}
+    use { "ellisonleao/gruvbox.nvim" }
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' } }
     -- Sticky Scroll

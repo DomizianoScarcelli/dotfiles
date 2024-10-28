@@ -12,8 +12,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Uses oh-my-posh prompt and theme
-# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_mocha.omp.json)"
-eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/themes/catppuccin.json)"
+eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/themes/gruvbox.json)"
+
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -49,6 +50,7 @@ eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/themes/catppuccin.js
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
+#Change colors for ls directories
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -196,7 +198,8 @@ fpath=(~/.zsh.d/ $fpath)
 
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
-source ~/.dotfiles/oh-my-zsh/.oh-my-zsh/custom/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+# source ~/.dotfiles/oh-my-zsh/.oh-my-zsh/custom/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+# source ~/.dotfiles/oh-my-zsh/.oh-my-zsh/custom/themes/gruvbox-zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #flutter

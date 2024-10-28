@@ -30,7 +30,41 @@ local colors = {
     end,
 }
 
-colors.bar.bg = colors.with_alpha(colors.bar.bg, 0.4)
-colors.bg1 = colors.with_alpha(colors.bg1, 0.4)
-colors.bg2 = colors.transparent
-return colors
+local monotone = {
+    black =0xffcdd6f4,
+    white =0xffcdd6f4,
+    red =0xffcdd6f4,
+    green =0xffcdd6f4,
+    blue =0xffcdd6f4,
+    yellow =0xffcdd6f4,
+    orange =0xffcdd6f4,
+    magenta =0xffcdd6f4,
+    grey =0xffcdd6f4,
+    transparent =0xffcdd6f4,
+    mauve =0xffcdd6f4,
+
+    bar = {
+        bg =colors.transparent,
+        border = 0xffcdd6f4,
+    },
+
+    popup = {
+        bg = 0xffcdd6f4,
+        border = 0xffcdd6f4,
+    },
+
+    bg1 =colors.transparent,
+    bg2 =colors.transparent,
+
+    with_alpha = function(color, alpha)
+        if alpha > 1.0 or alpha < 0.0 then return color end
+        return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+    end,
+}
+
+selected = monotone
+
+selected.bar.bg = selected.with_alpha(colors.bar.bg, 0.2)
+selected.bg1 = selected.with_alpha(colors.bg1, 0.2)
+selected.bg2 = selected.transparent
+return selected

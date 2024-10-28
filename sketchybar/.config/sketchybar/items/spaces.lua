@@ -37,7 +37,7 @@ for i = 1, 10, 1 do
   -- Single item bracket for space items to achieve double border on highlight
   local space_bracket = sbar.add("bracket", { space.name }, {
       background = {
-          color = colors.transparent,
+          color = colors.bg1,
           -- border_color = colors.bg2,
           height = 28,
           -- border_width = 2

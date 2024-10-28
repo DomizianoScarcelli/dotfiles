@@ -1,10 +1,13 @@
 -- "CATPPUCCIN THEME"
-local color = 'catppuccin-mocha'
-require("catppuccin").setup(
-{
-    transparent_background=true
-})
-vim.cmd.colorscheme(color)
+-- local color = 'catppuccin-mocha'
+-- require("catppuccin").setup(
+-- {
+--     transparent_background=true
+-- })
+-- vim.cmd.colorscheme(color)
+
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
 
 -- "ARIAKE THEME"
 -- Enable termguicolors if available
@@ -35,5 +38,5 @@ vim.api.nvim_set_hl(0, 'EndOfBuffer', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'NonText', {bg='none'})
 vim.api.nvim_set_hl(0, 'LineNr', {fg='#6c7086'})
 -- vim.api.nvim_set_hl(0, 'Folded', {bg='none'})
-vim.api.nvim_set_hl(0, "Comment", { fg = "#7f849c"})
-vim.api.nvim_set_hl(0, "@comment", { link = "Comment"})
+-- vim.api.nvim_set_hl(0, "Comment", { fg = "#7f849c"})
+-- vim.api.nvim_set_hl(0, "@comment", { link = "Comment"})
