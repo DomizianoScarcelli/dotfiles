@@ -1,5 +1,5 @@
 require("wrapping").setup({
-    create_keymaps = false,
+    create_commands = false,
     softener = {
         tex = true,
         markdown = true,

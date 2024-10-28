@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
     use { 'nvim-tree/nvim-web-devicons' }
     -- Color Scheme
     use { "catppuccin/nvim", as = "catppuccin" }
+    use {'jim-at-jibba/ariake-vim-colors'}
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' } }
     -- Sticky Scroll

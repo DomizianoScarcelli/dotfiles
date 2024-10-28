@@ -1,10 +1,26 @@
+-- "CATPPUCCIN THEME"
 local color = 'catppuccin-mocha'
 require("catppuccin").setup(
 {
     transparent_background=true
 })
-
 vim.cmd.colorscheme(color)
+
+-- "ARIAKE THEME"
+-- Enable termguicolors if available
+-- if vim.fn.has("termguicolors") == 1 then
+--   vim.opt.termguicolors = true
+-- end
+
+-- -- Theme settings
+-- vim.cmd("syntax enable")
+-- vim.opt.background = "dark"  -- Set background to dark
+-- -- For the light theme, uncomment the next line:
+-- -- vim.opt.background = "light"
+
+-- -- Set colorscheme
+-- vim.cmd("colorscheme ariake")
+
 
 vim.api.nvim_set_hl(0, 'Normal', {bg='none'})
 -- vim.api.nvim_set_hl(0, 'Visual', {bg=0x33f5e0dc, fg="#9399b2"})

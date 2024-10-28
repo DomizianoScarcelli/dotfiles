@@ -20,10 +20,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("i", "<M-BS>", "<C-W>")
@@ -36,6 +36,12 @@ vim.keymap.set("n", "/", "/\\c")
 vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
 vim.keymap.set("n", "L", "<CMD>bnext<cr>")
 vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
+vim.keymap.set("n", "<leader>df", function()
+    local confirm = vim.fn.confirm("Are you sure you want to force close this UNSAVED buffer?", "&Yes\n&No", 2)
+    if confirm == 1 then
+        vim.cmd("bdelete!")
+    end
+end)
 vim.keymap.set("n", "<leader>do", "<CMD>:%%bd|e#|bd#<cr>")
 
 -- Change tabs

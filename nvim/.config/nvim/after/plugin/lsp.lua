@@ -43,7 +43,6 @@ end)
 require('mason').setup({})
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pylsp' }, -- Install pylsp if it's not already installed
     handlers = {
         function(server_name)
             -- Default handler for any language server without a custom handler
@@ -52,26 +51,29 @@ require('mason-lspconfig').setup({
                 on_attach = lsp_zero.on_attach,
             })
         end,
-        -- Add custom handler for pylsp
-        ['pylsp'] = function()
-            require('lspconfig').pylsp.setup({
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            rope_autoimport = {
-                                enabled = true,                    -- Enable rope_autoimport
-                                completions = { enabled = true },  -- Enable completions
-                                code_actions = { enabled = true }, -- Enable code actions
-                            },
-                            isort = {
-                                enabled = true, -- Optionally enable isort for organizing imports
-                            },
-                        },
-                    },
-                },
-                capabilities = capabilities,
-                on_attach = lsp_zero.on_attach,
-            })
-        end,
+        -- ['pylsp'] = function()
+        --     require('lspconfig').pylsp.setup({
+        --         settings = {
+        --             pylsp = {
+        --                 plugins = {
+        --                     pycodestyle = { enabled = false }, -- Disable pycodestyle
+        --                     pylint = { enabled = false },      -- Disable pylint
+        --                     pyflakes = { enabled = false },    -- Disable pyflakes
+        --                     mccabe = { enabled = false },
+        --                     rope_autoimport = {
+        --                         enabled = true,                    -- Enable rope_autoimport
+        --                         completions = { enabled = true },  -- Enable completions
+        --                         code_actions = { enabled = true }, -- Enable code actions
+        --                     },
+        --                     isort = {
+        --                         enabled = true, -- Optionally enable isort for organizing imports
+        --                     },
+        --                 },
+        --             },
+        --         },
+        --         capabilities = capabilities,
+        --         on_attach = lsp_zero.on_attach,
+        --     })
+        -- end,
     },
 })

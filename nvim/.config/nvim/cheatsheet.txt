@@ -5,9 +5,10 @@ Live Grep | <leader>fg
 Find Recent Files | <leader>fo
 Git Commits | <leader>gc
 Git Status | <leader>gs
+Show results on Quickfixlist | <C-q>
 
 ## toggleterm
-Toggle Terminal | <C-\>
+Toggle Floating Terminal | <C-\>
 
 ## tmux
 Cycle screen | <prefix>n
@@ -16,7 +17,6 @@ Cycle screen | <prefix>n
 Search and replace | %s/search/replace
 
 ## vim-split-panes
-
 Increase/decrease height | <Ctrl+W> +/- (ex. 20<C-w>+)
 Increase/decrease width | <Ctrl+W> >/< (ex. 30<C-w><)
 Set height | <Ctrl+W> _ (ex. 50<C-w>_)
@@ -27,6 +27,7 @@ Equalize width and height of all windows | <Ctrl+W> =
 Go to next buffer | L
 Go to previous buffer | H
 Delete a buffer | <leader>db
+Delete other buffers | <leader>do
 Create tab | <C-n> 
 Go to next tab | <C-l> 
 Go to previous tab | <C-h> 
@@ -34,8 +35,20 @@ Delete a buffer | <leader>dt
 Flip v-split windows | <C-w><C-x>
 Rotate windows | <C-w><C-r>
 
+## code
+Generate Documentation | <leader>d
+Execute Commands | :!<command>
+Comment Selection | <leader>gc
+Format code | <leader>fb
+LSP Code Actions | <leader>ca
+
+
+## text
+Hard Wrap Mode | [ow
+Soft Wrap Mode | ]ow
+Toggle Wrap Mode | yow
+
 ## file-explorer
-Open Neovim tree | <leader>tr
-Open Oil | <leader>pv
+Open Neovim tree | <leader>pv
 
 
