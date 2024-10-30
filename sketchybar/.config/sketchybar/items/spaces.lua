@@ -14,7 +14,7 @@ for i = 1, 10, 1 do
       padding_left = 15,
       padding_right = 8,
       color = colors.white,
-      highlight_color = colors.mauve,
+      highlight_color = colors.green,
     },
     label = {
       padding_right = 20,
@@ -66,7 +66,7 @@ for i = 1, 10, 1 do
 
   space:subscribe("space_change", function(env)
     local selected = env.SELECTED == "true"
-    local color = selected and colors.mauve or colors.bg2
+    local color = selected and colors.green or colors.bg2
     space:set({
       icon = { highlight = selected, },
       label = { highlight = selected },
@@ -109,7 +109,7 @@ local spaces_indicator = sbar.add("item", {
   },
   background = {
     color = colors.with_alpha(colors.green, 0.0),
-    border_color = colors.with_alpha(colors.mauve, 0.0),
+    border_color = colors.with_alpha(colors.green, 0.0),
   }
 })
 

@@ -122,7 +122,6 @@ Desktop="/Users/dov/Desktop"
 Downloads="/Users/dov/Downloads"
 alias f='cd ~ && cd "$(fd . $iCloud $Desktop $Downloads --exclude node_modules --type directory  | fzf --tiebreak=length)"'
 alias fz='cd ~ && z "$(fd . $iCloud $Desktop $Downloads --exclude node_modules --type directory  | fzf --tiebreak=length)"'
-alias fr="f && ranger"
 alias ft="f && tmux"
 alias fn="f && nvim ."
 alias vim="nvim"
@@ -233,3 +232,8 @@ eval "$(lua /Users/dov/.config/z.lua/z.lua --init zsh)"
 
 # Created by `pipx` on 2024-05-08 18:58:53
 export PATH="$PATH:/Users/dov/.local/bin"
+
+# # Start into Desktop dir
+# cd ~/Desktop
+# # Start into yazi
+# y

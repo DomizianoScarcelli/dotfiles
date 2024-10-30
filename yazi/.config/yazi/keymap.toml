@@ -1,4 +1,3 @@
-
 [[manager.prepend_keymap]]
 on = [ "1" ]
 run = "plugin relative-motions --args=1"

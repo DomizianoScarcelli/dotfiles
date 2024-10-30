@@ -87,6 +87,8 @@ return require('packer').startup(function(use)
 -- Better jump to word
 use { "ggandor/leap.nvim" }
 use { "nvim-tree/nvim-tree.lua" }
+use {"mikavilpas/yazi.nvim",}
+
 use { 'f-person/git-blame.nvim' }
 -- Use local config on remote machines
 use {
