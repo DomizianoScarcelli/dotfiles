@@ -1,6 +1,6 @@
 These are my configuration files for MacOS.
 
-![Screenshot 2024-10-28 at 6 36 55 PM](https://github.com/user-attachments/assets/d7f714d5-3eda-44ee-ab0d-889c66e1c84e)
+![Screenshot 2024-10-30 at 12 10 18 PM](https://github.com/user-attachments/assets/7d16af30-803b-4e57-90c3-d8a501f1de03)
 
 
 <details>
