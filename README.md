@@ -19,7 +19,7 @@ I'm using:
 - `skhd` to map terminal commands to keyboard shortcut. This is helpful to manage yabai windows with the keyboard
 - `nvim` as the text editor of choice. I used `vscode` for a long time so I also keep its configuration files here.
 - `karabineer-elements` to remap keys
-- `ranger` as a terminal file manager
+- `yazi` as a terminal file manager
 - `tmux` to have multiple terminal windows in a single terminal
 - `kitty` as a terminal emulator
 - `sketchybar` to have a customizable alternative menu bar on MacOS
@@ -27,7 +27,7 @@ I'm using:
 
 ### good nvim plugins
 
-- `oil` to edit file tree like a normal nvim buffer
+- `nvim-tree` as a file manager
 - `lualine` to have some information at the top and bottom of the window
 - `undotree` to see a tree of my file undos
 - `telescope` as a fuzzy finder
