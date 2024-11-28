@@ -1,74 +1,85 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "palette": {
-        "os": "#ACB0BE",
-        "closer": "p:os",
-        "pink": "#458588",
-        "lavender": "#98971A",
-        "blue": "#ffffff",
-        "green": "#4b8058"
-    },
-    "blocks": [
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "blue": "#ffffff",
+    "closer": "p:os",
+    "green": "#4b8058",
+    "lavender": "#98971A",
+    "os": "#ACB0BE",
+    "pink": "#458588"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
         {
-            "alignment": "left",
-            "segments": [
-               {
-                    "foreground": "p:blue",
-                    "style": "plain",
-                    "template": "{{ .UserName }} ",
-                    "type": "session"
-                },
-                {
-                    "foreground": "p:pink",
-                    "properties": {
-                        "folder_icon": "..\ue5fe..",
-                        "home_icon": "~",
-                        "style": "agnoster_short"
-                    },
-                    "style": "plain",
-                    "template": "{{ .Path }} ",
-                    "type": "path"
-                },
-                {
-                    "foreground": "p:lavender",
-                    "properties": {
-                        "branch_icon": "\ue725 ",
-                        "cherry_pick_icon": "\ue29b ",
-                        "commit_icon": "\uf417 ",
-                        "fetch_status": false,
-                        "fetch_upstream_icon": false,
-                        "merge_icon": "\ue727 ",
-                        "no_commits_icon": "\uf0c3 ",
-                        "rebase_icon": "\ue728 ",
-                        "revert_icon": "\uf0e2 ",
-                        "tag_icon": "\uf412 "
-                    },
-                    "template": "{{ .HEAD }} ",
-                    "style": "plain",
-                    "type": "git"
-                },
-                {
-                    "style": "plain",
-                    "foreground": "p:closer",
-                    "template": "\uf105",
-                    "type": "text"
-                }
-            ],
-            "type": "prompt"
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .UserName }} ",
+          "foreground": "p:blue",
+          "type": "session",
+          "style": "plain"
         },
         {
-            "alignment": "right",
-            "segments": [
-                {
-                    "foreground": "p:lavender",
-                    "style": "plain",
-                    "template": "{{ if .Venv }}{{ if ne .Venv \"base\" }} \ue235 {{ .Venv }}{{ end }}{{ end }} ",
-                    "type": "python"
-                }
-            ],
-            "type": "rprompt"
+          "properties": {
+            "cache_duration": "none",
+            "folder_icon": "..\ue5fe..",
+            "home_icon": "~",
+            "style": "agnoster_short"
+          },
+          "template": "{{ .Path }} ",
+          "foreground": "p:pink",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cache_duration": "none",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": "{{ .HEAD }} ",
+          "foreground": "p:lavender",
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\uf105",
+          "foreground": "p:closer",
+          "type": "text",
+          "style": "plain"
         }
-    ],
-    "final_space": true,
-    "version": 2
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if .Venv }}{{ if ne .Venv \"base\" }} \ue235 {{ .Venv }}{{ end }}{{ end }} ",
+          "foreground": "p:lavender",
+          "type": "python",
+          "style": "plain"
+        }
+      ]
+    }
+  ],
+  "version": 3,
+  "final_space": true
 }

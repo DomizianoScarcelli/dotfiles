@@ -3,6 +3,11 @@ Find Files | <leader>ff
 Find Git Files | <leader>gf
 Live Grep | <leader>fg
 Find Recent Files | <leader>fo
+See Cached Pickers | <leader>fp
+Resume last picker | <leader>lf
+Find Commands | <leader>fc
+Find Buffers | <leader>fu
+
 Git Commits | <leader>gc
 Git Status | <leader>gs
 Show results on Quickfixlist | <C-q>

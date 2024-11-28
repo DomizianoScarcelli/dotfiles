@@ -14,6 +14,7 @@ local make_entry = require("telescope.make_entry")
 
 telescope.setup {
     defaults = {
+        cache_picker = { num_pickers = 30 },
         file_ignore_patterns = { ".git/", "node_modules" },
         -- path_display = { "shorten" },
         -- path_display = { "smart" },
@@ -81,6 +82,8 @@ function Cd(path)
 end
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>lf', builtin.resume, {})
+vim.keymap.set('n', '<leader>fp', builtin.pickers, {})
 vim.keymap.set('n', '<leader>fz',
     "<CMD>:lua require('telescope').extensions.z.z { cmd = { '/Users/dov/.config/z.lua/z.lua', '-l' } }<cr>", {})
 vim.keymap.set('n', '<leader>fd', Cd, {})

@@ -40,6 +40,6 @@ vim.api.nvim_set_hl(0, 'EndOfBuffer', {bg='none'})
 vim.api.nvim_set_hl(0, 'LineNr', {fg='#6c7086'})
 -- For gruvbox
 vim.api.nvim_set_hl(0, 'LineNr', {fg='#9f8e7a'})
--- vim.api.nvim_set_hl(0, 'Folded', {bg='none'})
+vim.api.nvim_set_hl(0, 'Folded', {bg='none'}) 
 -- vim.api.nvim_set_hl(0, "Comment", { fg = "#7f849c"})
 -- vim.api.nvim_set_hl(0, "@comment", { link = "Comment"})
