@@ -34,4 +34,5 @@ I'm using:
 - `todo-comments` to highlight TODOs and other keywords in comments
 - `vimtex` to be able to compile LaTeX documents on save
 - `vim-commentary` to quicly comment highlighted portions of code
+- `ufo` to manage automatic folding (I'm using it to automatically fold Python doctrings)
 
