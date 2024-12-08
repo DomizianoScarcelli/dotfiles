@@ -52,6 +52,14 @@ require('mason-lspconfig').setup({
             require('lspconfig')[server_name].setup({
                 capabilities = capabilities,
                 on_attach = lsp_zero.on_attach,
+                settings = {
+                    python = {
+                        analysis = {
+                            autoSearchPaths = true,
+                            useLibraryCodeForTypes = true,
+                        },
+                    },
+                },
             })
         end,
     },

@@ -36,6 +36,6 @@
 --         ["gx"] = "actions.open_external",
 --         ["g."] = "actions.toggle_hidden",
 --         ["g\\"] = "actions.toggle_trash",
---         -- ["gp"] = require('image_preview').PreviewImageOil()
+--         ["gp"] = require('image_preview').PreviewImageOil()
 --     },
 -- })
