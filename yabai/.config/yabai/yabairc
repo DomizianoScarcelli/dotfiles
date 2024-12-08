@@ -23,6 +23,7 @@ yabai -m rule --add app="^Stats$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="Fantastical" manage=off
 yabai -m rule --add app="Calendar" manage=off
+yabai -m rule --add app="Bitwarden" manage=off
 # yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Mail$" manage=off

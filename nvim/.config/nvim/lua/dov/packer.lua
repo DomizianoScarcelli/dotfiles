@@ -20,8 +20,6 @@ return require('packer').startup(function(use)
     use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' } }
     -- Sticky Scroll
     use { "nvim-treesitter/nvim-treesitter-context" }
-    -- Harpoon
-    -- use {"ThePrimeagen/harpoon"}
     -- UndoTree
     use { 'mbbill/undotree' }
     -- LSP
@@ -42,6 +40,8 @@ return require('packer').startup(function(use)
         }
 
     }
+    use {"nvimtools/none-ls.nvim"}
+    use {"jay-babu/mason-null-ls.nvim"}
     -- Easy comment block of code
     use { "tpope/vim-commentary" }
     -- Togglable Terminal
@@ -65,8 +65,6 @@ return require('packer').startup(function(use)
             { 'nvim-lua/plenary.nvim' },
         }
     }
-    -- Oil (manage files in a buffer)
-    -- use { "stevearc/oil.nvim" }
     -- Lualine (pretty statusbar)
     use {
         'nvim-lualine/lualine.nvim',
@@ -82,33 +80,45 @@ return require('packer').startup(function(use)
     use { "akinsho/git-conflict.nvim" }
     -- Custom startup dashboard
     use { "nvimdev/dashboard-nvim",
-    requires = { 'nvim-tree/nvim-web-devicons' }
-}
--- Better jump to word
-use { "ggandor/leap.nvim" }
-use { "nvim-tree/nvim-tree.lua" }
-use {"mikavilpas/yazi.nvim",}
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
+    -- Better jump to word
+    use { "nvim-tree/nvim-tree.lua" }
+    use { "mikavilpas/yazi.nvim", }
 
-use { 'f-person/git-blame.nvim' }
--- Use local config on remote machines
-use {
-    'chipsenkbeil/distant.nvim',
-    branch = 'v0.3',
-    config = function()
-        require('distant'):setup()
-    end }
+    use { 'f-person/git-blame.nvim' }
+    -- Use local config on remote machines
+    use {
+        'chipsenkbeil/distant.nvim',
+        branch = 'v0.3',
+        config = function()
+            require('distant'):setup()
+        end }
     -- Documentation Generator
     use {
         'kkoomen/vim-doge',
         run = ':call doge#install()'
     }
-    use{'luizribeiro/vim-cooklang', ft='cook' }
     use {
         "ThePrimeagen/refactoring.nvim",
         requires = {
-            {"nvim-lua/plenary.nvim"},
-            {"nvim-treesitter/nvim-treesitter"}
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
         }
     }
-    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+    use {
+        "alexpasmantier/pymple.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            -- optional (nicer ui)
+            "stevearc/dressing.nvim",
+            "nvim-tree/nvim-web-devicons",
+        },
+        run = ":PympleBuild",
+        config = function()
+            require("pymple").setup()
+        end,
+    }
 end)

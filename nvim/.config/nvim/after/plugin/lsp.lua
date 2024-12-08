@@ -41,6 +41,9 @@ end)
 -- to learn how to use mason.nvim
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 require('mason').setup({})
+require('mason-null-ls').setup({
+    ensure_installed = { "black" }, -- Install Black automatically
+})
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup({
     handlers = {
@@ -51,29 +54,11 @@ require('mason-lspconfig').setup({
                 on_attach = lsp_zero.on_attach,
             })
         end,
-        -- ['pylsp'] = function()
-        --     require('lspconfig').pylsp.setup({
-        --         settings = {
-        --             pylsp = {
-        --                 plugins = {
-        --                     pycodestyle = { enabled = false }, -- Disable pycodestyle
-        --                     pylint = { enabled = false },      -- Disable pylint
-        --                     pyflakes = { enabled = false },    -- Disable pyflakes
-        --                     mccabe = { enabled = false },
-        --                     rope_autoimport = {
-        --                         enabled = true,                    -- Enable rope_autoimport
-        --                         completions = { enabled = true },  -- Enable completions
-        --                         code_actions = { enabled = true }, -- Enable code actions
-        --                     },
-        --                     isort = {
-        --                         enabled = true, -- Optionally enable isort for organizing imports
-        --                     },
-        --                 },
-        --             },
-        --         },
-        --         capabilities = capabilities,
-        --         on_attach = lsp_zero.on_attach,
-        --     })
-        -- end,
+    },
+})
+local null_ls = require('null-ls')
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.black, -- Add Black as a formatter
     },
 })
