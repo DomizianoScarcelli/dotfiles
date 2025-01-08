@@ -14,6 +14,7 @@ These are my configuration files for MacOS.
 </details>
 
 I'm using:
+- `atuin` to manage terminal commands history
 - `stow` to manage symlinks to have dotfiles all in one place
 - `yabai` as a tiling window manager
 - `skhd` to map terminal commands to keyboard shortcut. This is helpful to manage yabai windows with the keyboard
@@ -24,6 +25,7 @@ I'm using:
 - `kitty` as a terminal emulator
 - `sketchybar` to have a customizable alternative menu bar on MacOS
 - `jankyborders` to have customizable borders on the current active window
+- `visidata` to handle `.csv` and other type of tabular files in the terminal
 
 ### good nvim plugins
 
