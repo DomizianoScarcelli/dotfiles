@@ -14,8 +14,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uses oh-my-posh prompt and theme
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/themes/gruvbox.json)"
 
-
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -87,8 +85,42 @@ eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/themes/gruvbox.json)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-syntax-highlighting git npm web-search)
 
+
 source $ZSH/oh-my-zsh.sh
 
+# ------------- Vim mode -------------
+# source: https://unix.stackexchange.com/questions/433273/changing-cursor-style-based-on-mode-in-both-zsh-and-vim
+# # vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+bindkey -M viins '^[' vi-cmd-mode # Map Esc to vicmd in viins keymap
+bindkey -M viins '^[^?' backward-kill-word # Replace '^[b' with your detected sequence
+bindkey -M vicmd '^[' vi-cmd-mode # Avoid that esc puts me again in insert mode when in visual mode
+
+
+# ------- FINISH ---------
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -155,39 +187,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-# JINA_CLI_BEGIN
-
-## autocomplete
-if [[ ! -o interactive ]]; then
-    return
-fi
-
-compctl -K _jina jina
-
-_jina() {
-  local words completions
-  read -cA words
-
-  if [ "${#words}" -eq 2 ]; then
-    completions="$(jina commands)"
-  else
-    completions="$(jina completions ${words[2,-2]})"
-  fi
-
-  reply=(${(ps:
-:)completions})
-}
-
-# session-wise fix
-ulimit -n 4096
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-# default workspace for Executors
-export JINA_DEFAULT_WORKSPACE_BASE="${HOME}/.jina/executor-workspace"
-
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-# JINA_CLI_END
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
 
 
@@ -235,5 +234,6 @@ export PATH="$PATH:/Users/dov/.local/bin"
 
 # # Start into Desktop dir
 # cd ~/Desktop
+#
 # # Start into yazi
 # y
