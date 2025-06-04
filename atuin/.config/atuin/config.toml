@@ -1,1 +1,3 @@
 keymap_mode = "vim-insert"
+# style = "full"
+# inline_height = 0

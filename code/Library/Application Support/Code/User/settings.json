@@ -64,7 +64,7 @@
 		{ "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
 		{ "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
 		{
-			"before": ["g", "h"],
+			"before": ["<C-i>"],
 			"commands": ["editor.action.showDefinitionPreviewHover"]
 		},
 		{
@@ -99,7 +99,7 @@
 	],
 	"diffEditor.ignoreTrimWhitespace": false,
 	"editor.accessibilitySupport": "off",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.defaultFormatter": "ms-python.black-formatter",
 	"editor.formatOnPaste": true,
 	"editor.formatOnType": true,
 	"editor.linkedEditing": true,
@@ -131,7 +131,7 @@
 	"prettier.semi": false,
 	"prettier.tabWidth": 4,
 	"prettier.useTabs": true,
-	"python.defaultInterpreterPath": "/Users/dov/miniconda3/envs/dl/bin/python",
+	"python.defaultInterpreterPath": "/Users/dov/miniconda3/envs/nvimpython",
 	"remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
 	"security.workspace.trust.untrustedFiles": "open",
 	"tabnine.experimentalAutoImports": true,
@@ -172,7 +172,7 @@
 	},
 	"[python]": {
 		"editor.formatOnType": true,
-		"editor.defaultFormatter": "ms-python.autopep8"
+		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
 	"jupyter.interactiveWindow.creationMode": "perFile",
 	"redhat.telemetry.enabled": true,
@@ -234,5 +234,14 @@
 		"backgroundColor": "#00000000",
 		"vibrancy": "ultra-dark"
 	},
-	"apc.imports": ["file:///Users/dov/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"]
+	"apc.imports": ["file:///Users/dov/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"],
+	"vim.handleKeys": {
+		"<C-d>": true,
+		"<C-s>": false,
+		"<C-z>": false
+	},
+	"python.locator": "js",
+	"terminal.integrated.allowChords": false,
+    "notebook.lineNumbers": "on",
+    "notebook.defaultFormatter": "ms-python.black-formatter"
 }

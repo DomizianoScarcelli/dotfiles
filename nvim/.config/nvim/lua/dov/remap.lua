@@ -35,13 +35,13 @@ vim.keymap.set("n", "/", "/\\c")
 -- Change Buffers
 vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
 vim.keymap.set("n", "L", "<CMD>bnext<cr>")
-vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
-vim.keymap.set("n", "<leader>df", function()
-    local confirm = vim.fn.confirm("Are you sure you want to force close this UNSAVED buffer?", "&Yes\n&No", 2)
-    if confirm == 1 then
-        vim.cmd("bdelete!")
-    end
-end)
+-- vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
+-- vim.keymap.set("n", "<leader>df", function()
+--     local confirm = vim.fn.confirm("Are you sure you want to force close this UNSAVED buffer?", "&Yes\n&No", 2)
+--     if confirm == 1 then
+--         vim.cmd("bdelete!")
+--     end
+-- end)
 vim.keymap.set("n", "<leader>do", "<CMD>:%%bd|e#|bd#<cr>")
 
 -- Change tabs

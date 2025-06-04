@@ -88,7 +88,12 @@ vim.keymap.set('n', '<leader>fz',
     "<CMD>:lua require('telescope').extensions.z.z { cmd = { '/Users/dov/.config/z.lua/z.lua', '-l' } }<cr>", {})
 vim.keymap.set('n', '<leader>fd', Cd, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fg', function()
+  require('telescope.builtin').live_grep {
+    grep_open_files = false,
+    search_dirs = vim.fn.systemlist("git ls-files")
+  }
+end, {})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>fu', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fc', builtin.commands, {})

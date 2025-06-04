@@ -9,6 +9,7 @@
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
+
 -- "ARIAKE THEME"
 -- Enable termguicolors if available
 -- if vim.fn.has("termguicolors") == 1 then

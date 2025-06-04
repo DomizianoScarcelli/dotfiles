@@ -161,7 +161,51 @@ alias vim="nvim"
 # Pomodoro timer (source https://gist.github.com/bashbunni/f6b04fc4703903a71ce9f70c58345106)
 alias pomodoro="~/.dotfiles/scripts/pomodoro.sh"
 
+function sumtimes() {
+    local total=0
+    local op time_part h m s sec parts
 
+    for arg in "$@"; do
+        if [[ "$arg" =~ ^[+-] ]]; then
+            op=${arg:0:1}        # Extract `+` or `-`
+            time_part=${arg:1}    # Remove the operator from the time part
+        else
+            op="+"
+            time_part=$arg
+        fi
+
+        # Split time_part into an array based on `:`
+        parts=("${(@s.:.)time_part}")
+
+        # Assign values based on the number of parts
+        if (( ${#parts[@]} == 3 )); then
+            h=${parts[1]}
+            m=${parts[2]}
+            s=${parts[3]}
+        elif (( ${#parts[@]} == 2 )); then
+            h=0
+            m=${parts[1]}
+            s=${parts[2]}
+        else
+            h=0
+            m=0
+            s=${parts[1]}
+        fi
+
+        # Convert to total seconds
+        sec=$(( h * 3600 + m * 60 + s ))
+
+        # Apply the operation explicitly
+        if [[ "$op" == "+" ]]; then
+            (( total += sec ))
+        else
+            (( total -= sec ))
+        fi
+    done
+
+    # Convert back to HH:MM:SS format
+    printf "%d:%02d:%02d\n" $((total/3600)) $(((total%3600)/60)) $((total%60))
+}
 # Yazi shell wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -170,6 +214,10 @@ function y() {
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+function pyclean () {
+    find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 }
 
 # >>> conda initialize >>>

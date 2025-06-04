@@ -1,6 +1,6 @@
 local lsp_zero = require('lsp-zero')
-local cmp = require('cmp')
-
+lsp_zero.extend_cmp()
+require('cmp').setup({})
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
@@ -52,14 +52,13 @@ require('mason-lspconfig').setup({
             require('lspconfig')[server_name].setup({
                 capabilities = capabilities,
                 on_attach = lsp_zero.on_attach,
-                -- settings = {
-                --     python = {
-                --         analysis = {
-                --             autoSearchPaths = true,
-                --             useLibraryCodeForTypes = true,
-                --         },
-                --     },
-                -- },
+                settings = {
+                    python = {
+                        analysis = {
+                            diagnosticMode = "workspace",
+                        },
+                    },
+                },
             })
         end,
     },

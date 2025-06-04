@@ -17,7 +17,9 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "ellisonleao/gruvbox.nvim" }
     -- Treesitter
-    use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' } }
+    use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' }, requires = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+    }, }
     -- Sticky Scroll
     use { "nvim-treesitter/nvim-treesitter-context" }
     -- UndoTree
@@ -40,12 +42,12 @@ return require('packer').startup(function(use)
         }
 
     }
-    use {"nvimtools/none-ls.nvim"}
-    use {"jay-babu/mason-null-ls.nvim"}
+    use { "nvimtools/none-ls.nvim" }
+    use { "jay-babu/mason-null-ls.nvim" }
     -- Easy comment block of code
     use { "tpope/vim-commentary" }
     -- Togglable Terminal
-    use { "akinsho/toggleterm.nvim" }
+    -- use { "akinsho/toggleterm.nvim" }
     -- Rainbow CSV
     use { 'mechatroner/rainbow_csv' }
     -- Highlight Comments
@@ -79,9 +81,9 @@ return require('packer').startup(function(use)
     -- Visualize git conflicts
     use { "akinsho/git-conflict.nvim" }
     -- Custom startup dashboard
-    use { "nvimdev/dashboard-nvim",
-        requires = { 'nvim-tree/nvim-web-devicons' }
-    }
+    -- use { "nvimdev/dashboard-nvim",
+    --     requires = { 'nvim-tree/nvim-web-devicons' }
+    -- }
     -- Better jump to word
     use { "nvim-tree/nvim-tree.lua" }
     use { "mikavilpas/yazi.nvim", }
@@ -99,14 +101,37 @@ return require('packer').startup(function(use)
         'kkoomen/vim-doge',
         run = ':call doge#install()'
     }
-    use {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-treesitter/nvim-treesitter" }
-        }
-    }
+    -- use {
+    --     "ThePrimeagen/refactoring.nvim",
+    --     requires = {
+    --         { "nvim-lua/plenary.nvim" },
+    --         { "nvim-treesitter/nvim-treesitter" }
+    --     }
+    -- }
+    --
+    -- Automatic folding
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+    use { "folke/snacks.nvim",
+        config = function()
+            require('snacks').setup({
+                -- Your configuration options here
+                -- Refer to the configuration section below
+                bigfile = { enabled = true },
+                notifier = {
+                    enabled = true,
+                    timeout = 3000,
+                },
+                quickfile = { enabled = true },
+                -- words = { enabled = true },
+                styles = {
+                    notification = {
+                        wo = { wrap = true } -- Wrap notifications
+                    }
+                }
+            })
+        end
+    }
+    -- Python rename refactoring
     use {
         "alexpasmantier/pymple.nvim",
         requires = {
@@ -120,5 +145,89 @@ return require('packer').startup(function(use)
         config = function()
             require("pymple").setup()
         end,
+    }
+    -- Jupyter Notebooks
+    use {
+        "benlubas/molten-nvim",
+        run = ":UpdateRemotePlugins",
+        config = function()
+            vim.g.molten_auto_open_output = false
+            vim.g.molten_image_provider = "image.nvim"
+            vim.g.molten_wrap_output = true
+            vim.g.molten_virt_text_output = true
+            vim.g.molten_virt_lines_off_by_1 = true
+        end
+    }
+
+    use {
+        "quarto-dev/quarto-nvim",
+        ft = { "markdown", "quarto" },   -- lazy-loads plugin on markdown/quarto files
+        requires = {
+            { "jmbuhr/otter.nvim" },     -- required dependency
+            { "nvim-lua/plenary.nvim" }, -- otter depends on this
+            -- any others you use
+        },
+        config = function()
+            require("quarto").setup {
+                debug = false,
+                closePreviewOnExit = true,
+                lspFeatures = {
+                    enabled = true,
+                    chunks = "curly",
+                    languages = { "r", "python", "julia", "bash", "html" },
+                    diagnostics = {
+                        enabled = true,
+                        triggers = { "BufWritePost" },
+                    },
+                    completion = {
+                        enabled = true,
+                    },
+                },
+                codeRunner = {
+                    enabled = true,
+                    default_method = "molten",
+                    ft_runners = {},
+                    never_run = { "yaml" },
+                },
+            }
+
+            local runner = require("quarto.runner")
+            vim.keymap.set("n", "<leader>rc", runner.run_cell)
+            vim.keymap.set("n", "<leader>rA", function() runner.run_all(true) end)
+
+            -- Activates Quarto for .md files with frontmatter
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = "markdown",
+                callback = function()
+                    require("quarto").activate()
+                end,
+            })
+            vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+                pattern = "*.ipynb",
+                callback = function()
+                    vim.bo.filetype = "quarto"
+                end,
+            })
+        end
+    }
+
+    use {
+        "3rd/image.nvim",
+        config = function()
+            require("image").setup({
+                backend = "kitty", -- or "ueberzug", "tycat", etc.
+            })
+        end
+    }
+
+    use {
+        "GCBallesteros/jupytext.nvim",
+        config = function()
+            require("jupytext").setup({
+                style = "markdown",
+                output_extension = "md",
+                force_ft = "markdown",
+            })
+        end
     }
 end)
