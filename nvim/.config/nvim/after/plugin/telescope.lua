@@ -89,10 +89,7 @@ vim.keymap.set('n', '<leader>fz',
 vim.keymap.set('n', '<leader>fd', Cd, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg', function()
-  require('telescope.builtin').live_grep {
-    grep_open_files = false,
-    search_dirs = vim.fn.systemlist("git ls-files")
-  }
+  require('telescope.builtin').live_grep()
 end, {})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>fu', builtin.buffers, {})

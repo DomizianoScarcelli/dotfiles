@@ -31,3 +31,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank({ higroup = "IncSearch", timeout = 80 })
     end,
 })
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = "*.py",
+--   callback = function()
+--     -- Only force it if it's not already set correctly to avoid loops,
+--     -- OR force it blindly if the syntax is missing.
+--     if vim.bo.filetype == 'python' then
+--         -- This forces the "Filetype" event to re-fire
+--         vim.cmd('set filetype=python') 
+--     end
+--   end,
+-- })
+vim.g.python3_host_prog = "/Users/domiziano.scarcelli/miniconda3/envs/nvim-python/bin/python"

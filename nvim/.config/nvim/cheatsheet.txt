@@ -46,6 +46,8 @@ Execute Commands | :!<command>
 Comment Selection | <leader>gc
 Format code | <leader>fb
 LSP Code Actions | <leader>ca
+Function Information (Hover) | K
+Expand Error (Open Float) | <leader>vd
 
 
 ## text
