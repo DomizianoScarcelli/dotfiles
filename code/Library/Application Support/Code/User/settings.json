@@ -243,5 +243,7 @@
 	"python.locator": "js",
 	"terminal.integrated.allowChords": false,
     "notebook.lineNumbers": "on",
-    "notebook.defaultFormatter": "ms-python.black-formatter"
+    "notebook.defaultFormatter": "ms-python.black-formatter",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "docker.extension.enableComposeLanguageServer": false
 }

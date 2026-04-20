@@ -60,8 +60,8 @@ yabai -m config mouse_action1 move
 
 ## Change how yabai looks
 yabai -m config layout 
-# yabai -m config top_padding 10
-yabai -m config external_bar all:55:0
+yabai -m config top_padding 20
+# yabai -m config external_bar all:55:0
 yabai -m config bottom_padding 20
 yabai -m config left_padding 20
 yabai -m config right_padding 20

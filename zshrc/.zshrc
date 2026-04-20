@@ -285,3 +285,8 @@ export PATH="$PATH:/Users/dov/.local/bin"
 #
 # # Start into yazi
 # y
+#
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.1
