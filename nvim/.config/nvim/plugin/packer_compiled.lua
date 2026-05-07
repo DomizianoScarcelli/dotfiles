@@ -75,7 +75,7 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["blink.cmp"] = {
-    config = { "\27LJ\2\nâ\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\1\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\nfuzzy\0\vkeymap\0\15completion\0\15appearance\0\fsources\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0" },
+    config = { "\27LJ\2\nâ\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\1\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\15appearance\0\vkeymap\0\15completion\0\fsources\0\nfuzzy\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0" },
     loaded = true,
     path = "/Users/domiziano.scarcelli/.local/share/nvim/site/pack/packer/start/blink.cmp",
     url = "https://github.com/saghen/blink.cmp"
@@ -173,6 +173,11 @@ _G.packer_plugins = {
     path = "/Users/domiziano.scarcelli/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-spectre"] = {
+    loaded = true,
+    path = "/Users/domiziano.scarcelli/.local/share/nvim/site/pack/packer/start/nvim-spectre",
+    url = "https://github.com/nvim-pack/nvim-spectre"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/domiziano.scarcelli/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -197,6 +202,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/domiziano.scarcelli/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["octo.nvim"] = {
+    loaded = true,
+    path = "/Users/domiziano.scarcelli/.local/share/nvim/site/pack/packer/start/octo.nvim",
+    url = "https://github.com/pwntester/octo.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -240,7 +250,7 @@ _G.packer_plugins = {
     url = "https://github.com/BurntSushi/ripgrep"
   },
   ["snacks.nvim"] = {
-    config = { "\27LJ\2\nì\2\0\0\6\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\r\0005\4\v\0005\5\n\0=\5\f\4=\4\14\3=\3\15\2B\0\2\1K\0\1\0\vstyles\17notification\1\0\1\17notification\0\awo\1\0\1\awo\0\1\0\1\twrap\2\14quickfile\1\0\1\fenabled\2\rnotifier\1\0\2\fenabled\2\ftimeout\3∏\23\fbigfile\1\0\4\fbigfile\0\14quickfile\0\rnotifier\0\vstyles\0\1\0\1\fenabled\2\nsetup\vsnacks\frequire\0" },
+    config = { "\27LJ\2\nì\2\0\0\6\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\r\0005\4\v\0005\5\n\0=\5\f\4=\4\14\3=\3\15\2B\0\2\1K\0\1\0\vstyles\17notification\1\0\1\17notification\0\awo\1\0\1\awo\0\1\0\1\twrap\2\14quickfile\1\0\1\fenabled\2\rnotifier\1\0\2\ftimeout\3∏\23\fenabled\2\fbigfile\1\0\4\rnotifier\0\14quickfile\0\vstyles\0\fbigfile\0\1\0\1\fenabled\2\nsetup\vsnacks\frequire\0" },
     loaded = true,
     path = "/Users/domiziano.scarcelli/.local/share/nvim/site/pack/packer/start/snacks.nvim",
     url = "https://github.com/folke/snacks.nvim"
@@ -300,7 +310,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: snacks.nvim
 time([[Config for snacks.nvim]], true)
-try_loadstring("\27LJ\2\nì\2\0\0\6\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\r\0005\4\v\0005\5\n\0=\5\f\4=\4\14\3=\3\15\2B\0\2\1K\0\1\0\vstyles\17notification\1\0\1\17notification\0\awo\1\0\1\awo\0\1\0\1\twrap\2\14quickfile\1\0\1\fenabled\2\rnotifier\1\0\2\fenabled\2\ftimeout\3∏\23\fbigfile\1\0\4\fbigfile\0\14quickfile\0\rnotifier\0\vstyles\0\1\0\1\fenabled\2\nsetup\vsnacks\frequire\0", "config", "snacks.nvim")
+try_loadstring("\27LJ\2\nì\2\0\0\6\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\r\0005\4\v\0005\5\n\0=\5\f\4=\4\14\3=\3\15\2B\0\2\1K\0\1\0\vstyles\17notification\1\0\1\17notification\0\awo\1\0\1\awo\0\1\0\1\twrap\2\14quickfile\1\0\1\fenabled\2\rnotifier\1\0\2\ftimeout\3∏\23\fenabled\2\fbigfile\1\0\4\rnotifier\0\14quickfile\0\vstyles\0\fbigfile\0\1\0\1\fenabled\2\nsetup\vsnacks\frequire\0", "config", "snacks.nvim")
 time([[Config for snacks.nvim]], false)
 -- Config for: distant.nvim
 time([[Config for distant.nvim]], true)
@@ -308,20 +318,20 @@ try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\2\18\2\0\0009\0\2\0B
 time([[Config for distant.nvim]], false)
 -- Config for: blink.cmp
 time([[Config for blink.cmp]], true)
-try_loadstring("\27LJ\2\nâ\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\1\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\nfuzzy\0\vkeymap\0\15completion\0\15appearance\0\fsources\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
+try_loadstring("\27LJ\2\nâ\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\1\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\15appearance\0\vkeymap\0\15completion\0\fsources\0\nfuzzy\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
 time([[Config for blink.cmp]], false)
 -- Config for: molten-nvim
 time([[Config for molten-nvim]], true)
 try_loadstring("\27LJ\2\n‡\1\0\0\2\0\b\0\0216\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\0\0009\0\1\0'\1\4\0=\1\3\0006\0\0\0009\0\1\0+\1\2\0=\1\5\0006\0\0\0009\0\1\0+\1\2\0=\1\6\0006\0\0\0009\0\1\0+\1\2\0=\1\a\0K\0\1\0\31molten_virt_lines_off_by_1\28molten_virt_text_output\23molten_wrap_output\15image.nvim\26molten_image_provider\28molten_auto_open_output\6g\bvim\0", "config", "molten-nvim")
 time([[Config for molten-nvim]], false)
--- Config for: pymple.nvim
-time([[Config for pymple.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vpymple\frequire\0", "config", "pymple.nvim")
-time([[Config for pymple.nvim]], false)
 -- Config for: conform.nvim
 time([[Config for conform.nvim]], true)
 try_loadstring("\27LJ\2\nä\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vpython\1\0\1\vpython\0\1\2\0\0\truff\nsetup\fconform\frequire\0", "config", "conform.nvim")
 time([[Config for conform.nvim]], false)
+-- Config for: pymple.nvim
+time([[Config for pymple.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vpymple\frequire\0", "config", "pymple.nvim")
+time([[Config for pymple.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

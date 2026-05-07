@@ -38,8 +38,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 --     -- OR force it blindly if the syntax is missing.
 --     if vim.bo.filetype == 'python' then
 --         -- This forces the "Filetype" event to re-fire
---         vim.cmd('set filetype=python') 
+--         vim.cmd('set filetype=python')
 --     end
 --   end,
 -- })
 vim.g.python3_host_prog = "/Users/domiziano.scarcelli/miniconda3/envs/nvim-python/bin/python"
+
+vim.filetype.add({
+    extension = {
+        j2 = 'jinja',
+        jinja = 'jinja',
+        jinja2 = 'jinja',
+    },
+})

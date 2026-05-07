@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 -- If using the default NetRw file explorer
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- If using oil.nvim

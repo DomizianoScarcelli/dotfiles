@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
     use { "nvim-telescope/telescope-z.nvim" }
-    
+
     -- Telescope Icons
     use { 'nvim-tree/nvim-web-devicons' }
 
@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
     use { "jay-babu/mason-null-ls.nvim" }
     use { "tpope/vim-commentary" }
     use { 'mechatroner/rainbow_csv' }
-    
+
     use {
         "folke/todo-comments.nvim",
         requires = { { 'nvim-lua/plenary.nvim' } }
@@ -77,7 +77,7 @@ return require('packer').startup(function(use)
         branch = 'v0.3',
         config = function()
             require('distant'):setup()
-        end 
+        end
     }
 
     use {
@@ -86,7 +86,7 @@ return require('packer').startup(function(use)
     }
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-    
+
     use { "folke/snacks.nvim",
         config = function()
             require('snacks').setup({
@@ -119,45 +119,13 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- use {
-    --     "quarto-dev/quarto-nvim",
-    --     ft = { "markdown", "quarto" },
-    --     requires = { { "jmbuhr/otter.nvim" }, { "nvim-lua/plenary.nvim" } },
-    --     config = function()
-    --         require("quarto").setup {
-    --             lspFeatures = {
-    --                 enabled = true,
-    --                 chunks = "curly",
-    --                 languages = { "r", "python", "julia", "bash", "html" },
-    --                 completion = { enabled = true }, 
-    --             },
-    --             codeRunner = { enabled = true, default_method = "molten" },
-    --         }
-    --         -- ... (rest of your quarto runner logic)
-    --     end
-    -- }
-
-    -- use {
-    --     "3rd/image.nvim",
-    --     config = function()
-    --         require("image").setup({ backend = "kitty" })
-    --     end
-    -- }
-
-    -- use {
-    --     "GCBallesteros/jupytext.nvim",
-    --     config = function()
-    --         require("jupytext").setup({ style = "markdown", output_extension = "md", force_ft = "markdown" })
-    --     end
-    -- }
-
     use({
         "stevearc/conform.nvim",
         config = function()
             require("conform").setup({ formatters_by_ft = { python = { "ruff" } } })
         end,
     })
-use {
+    use {
         'saghen/blink.cmp',
         requires = 'rafamadriz/friendly-snippets',
         tag = 'v1.*',
@@ -169,17 +137,28 @@ use {
                 appearance = {
                     nerd_font_variant = 'mono'
                 },
-                completion = { 
-                    documentation = { auto_show = false } 
+                completion = {
+                    documentation = { auto_show = false }
                 },
                 sources = {
                     default = { 'lsp', 'path', 'snippets', 'buffer' },
                 },
-                fuzzy = { 
-                    implementation = "prefer_rust_with_warning" 
+                fuzzy = {
+                    implementation = "prefer_rust_with_warning"
                 }
             })
         end
     }
+    use {
+        'nvim-pack/nvim-spectre',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+    use {
+        "pwntester/octo.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "nvim-tree/nvim-web-devicons",
+        }
+    }
 end)
-

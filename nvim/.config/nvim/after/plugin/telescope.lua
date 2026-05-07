@@ -88,8 +88,8 @@ vim.keymap.set('n', '<leader>fz',
     "<CMD>:lua require('telescope').extensions.z.z { cmd = { '/Users/dov/.config/z.lua/z.lua', '-l' } }<cr>", {})
 vim.keymap.set('n', '<leader>fd', Cd, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fg', function()
-  require('telescope.builtin').live_grep()
+vim.keymap.set('n', '<leader>fG', function()
+    require('telescope.builtin').live_grep()
 end, {})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>fu', builtin.buffers, {})
@@ -106,3 +106,19 @@ vim.keymap.set('n', '<leader>/', function()
             previewer = true,
         })
 end, {})
+
+vim.keymap.set('n', '<leader>fg', function()
+    require('telescope.builtin').live_grep({
+        prompt_title = "Live Grep (Respects .gitignore)",
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            -- The "-u" flags are removed here so rg respects .gitignore
+        }
+    })
+end, { desc = "Live grep respecting .gitignore" })
