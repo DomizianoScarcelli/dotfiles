@@ -16,7 +16,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>td", function() vim.lsp.buf.type_definition() end, opts)
     vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
-    
+
     -- Formatting via Conform
     vim.keymap.set("n", "<leader>fb", function()
         require("conform").format({ lsp_fallback = true })
@@ -90,5 +90,6 @@ null_ls.setup({
         null_ls.builtins.formatting.sqlfluff.with({
             extra_args = { "--dialect", "postgres" },
         }),
+        null_ls.builtins.diagnostics.yamllint,
     },
 })
