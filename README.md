@@ -13,20 +13,23 @@ These are my configuration files for MacOS.
   <img src="https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/70db3cb2-14ed-4e0e-bdf9-30829b27d955" />
 </details>
 
-I'm using:
+### I'm currently using:
 - `atuin` to manage terminal commands history
 - `stow` to manage symlinks to have dotfiles all in one place
-- `yabai` as a tiling window manager
-- `skhd` to map terminal commands to keyboard shortcut. This is helpful to manage yabai windows with the keyboard
 - `nvim` as the text editor of choice. I used `vscode` for a long time so I also keep its configuration files here.
 - `karabineer-elements` to remap keys
-- `yazi` as a terminal file manager
+- `ghostty` as a terminal emulator
 - `tmux` to have multiple terminal windows in a single terminal
+
+### I'm not using anymore
+- `yabai` as a tiling window manager
+- `skhd` to map terminal commands to keyboard shortcut. This is helpful to manage yabai windows with the keyboard
+- `yazi` as a terminal file manager
 - `kitty` as a terminal emulator
 - `sketchybar` to have a customizable alternative menu bar on MacOS
 - `jankyborders` to have customizable borders on the current active window
 - `visidata` to handle `.csv` and other type of tabular files in the terminal
-
+  
 ### good nvim plugins
 
 - `nvim-tree` as a file manager
