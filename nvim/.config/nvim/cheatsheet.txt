@@ -1,16 +1,25 @@
 ## telescope
 Find Files | <leader>ff
+Find Buffers | <leader><space><space>
 Find Git Files | <leader>gf
-Live Grep | <leader>fg
-Find Recent Files | <leader>fo
+Live Grep (.gitignore) | <leader>fg
+Live Grep (all files) | <leader>fG
+Find Recent Files | <leader>fr
 See Cached Pickers | <leader>fp
 Resume last picker | <leader>lf
 Find Commands | <leader>fc
-Find Buffers | <leader>fu
+Find Buffers | <leader><space>
 
-Git Commits | <leader>gc
-Git Status | <leader>gs
-Show results on Quickfixlist | <C-q>
+## bufferline
+Delete a buffer | <leader>db
+Delete other buffers | <leader>do
+Delete buffers to the right | <leader>dr
+Delete buffers to the left | <leader>dl
+Move buffer to the right | <leader>R
+Move buffer to the left | <leader>R
+Go to next buffer | L
+Go to previous buffer | H
+Pick Buffers | <leader><space>
 
 ## toggleterm
 Toggle Floating Terminal | <C-\>
@@ -29,14 +38,9 @@ Set width |<Ctrl+W> | (ex. 50<C-w>|)
 Equalize width and height of all windows | <Ctrl+W> = 
 
 ## misc
-Go to next buffer | L
-Go to previous buffer | H
-Delete a buffer | <leader>db
-Delete other buffers | <leader>do
-Create tab | <C-n> 
-Go to next tab | <C-l> 
-Go to previous tab | <C-h> 
-Delete a buffer | <leader>dt
+Git Commits | <leader>gc
+Git Status | <leader>gs
+Show results on Quickfixlist | <C-q>
 Flip v-split windows | <C-w><C-x>
 Rotate windows | <C-w><C-r>
 
@@ -49,6 +53,16 @@ LSP Code Actions | <leader>ca
 Function Information (Hover) | K
 Expand Error (Open Float) | <leader>vd
 
+## Spectre
+Spectre search and replace | <leader>S
+Spectre search and replace current word | <leader>sw
+Spectre search and replace on current file | <leader>sp
+
+## Octo
+Start Draft PR Review | :Octo review start
+Delete Draft PR Review | :Octo review discard
+Submit PR Review | :Octo review submit
+Leave PR Comment | <leader>ca
 
 ## text
 Hard Wrap Mode | [ow
@@ -57,5 +71,3 @@ Toggle Wrap Mode | yow
 
 ## file-explorer
 Open Neovim tree | <leader>pv
-
-

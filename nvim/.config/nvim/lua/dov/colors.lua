@@ -12,9 +12,9 @@ vim.o.background = "dark" -- or "light" for light mode
 
 -- "ARIAKE THEME"
 -- Enable termguicolors if available
--- if vim.fn.has("termguicolors") == 1 then
---   vim.opt.termguicolors = true
--- end
+if vim.fn.has("termguicolors") == 1 then
+  vim.opt.termguicolors = true
+end
 
 -- -- Theme settings
 -- vim.cmd("syntax enable")

@@ -87,18 +87,7 @@ return require('packer').startup(function(use)
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
-    use { "folke/snacks.nvim",
-        config = function()
-            require('snacks').setup({
-                bigfile = { enabled = true },
-                notifier = { enabled = true, timeout = 3000 },
-                quickfile = { enabled = true },
-                styles = {
-                    notification = { wo = { wrap = true } }
-                }
-            })
-        end
-    }
+    use { "folke/snacks.nvim"}
 
     use {
         "alexpasmantier/pymple.nvim",
@@ -160,5 +149,11 @@ return require('packer').startup(function(use)
             "nvim-telescope/telescope.nvim",
             "nvim-tree/nvim-web-devicons",
         }
+    }
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "*",
+        requires = 'nvim-tree/nvim-web-devicons',
+        after = "catppuccin"
     }
 end)

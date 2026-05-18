@@ -28,28 +28,22 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("i", "<M-BS>", "<C-W>")
-
--- vim.keymap.set("n", "<leader>s", vim.cmd.update)
+-- vim.keymap.set("i", "<M-BS>", '<Esc>vb"_xi', { desc = "Delete previous word without yanking" })
+-- vim.keymap.set("n", "<leader>dwl", '<Esc>vb"_xi', { desc = "Delete previous word without yanking" })
 
 vim.keymap.set("n", "/", "/\\c")
 
--- Change Buffers
-vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
-vim.keymap.set("n", "L", "<CMD>bnext<cr>")
--- vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
--- vim.keymap.set("n", "<leader>df", function()
---     local confirm = vim.fn.confirm("Are you sure you want to force close this UNSAVED buffer?", "&Yes\n&No", 2)
---     if confirm == 1 then
---         vim.cmd("bdelete!")
---     end
--- end)
-vim.keymap.set("n", "<leader>do", "<CMD>:%%bd|e#|bd#<cr>")
+-- Change Buffers (commented out because of bufferline better mapping)
+-- vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
+-- vim.keymap.set("n", "L", "<CMD>bnext<cr>")
+vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
+-- vim.keymap.set("n", "<leader>do", "<CMD>:%%bd|e#|bd#<cr>")
 
 -- Change tabs
-vim.keymap.set("n", "<C-h>", "<CMD>tabprevious<cr>")
-vim.keymap.set("n", "<C-l>", "<CMD>tabnext<cr>")
-vim.keymap.set("n", "<C-n>", "<CMD>tabnew<cr>")
-vim.keymap.set("n", "<leader>dt", "<CMD>tabdelete<cr>")
+-- vim.keymap.set("n", "<C-h>", "<CMD>tabprevious<cr>")
+-- vim.keymap.set("n", "<C-l>", "<CMD>tabnext<cr>")
+-- vim.keymap.set("n", "<C-n>", "<CMD>tabnew<cr>")
+-- vim.keymap.set("n", "<leader>dt", "<CMD>tabdelete<cr>")
 
 
 -- Open in finder

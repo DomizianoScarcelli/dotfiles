@@ -91,8 +91,8 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fG', function()
     require('telescope.builtin').live_grep()
 end, {})
-vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
-vim.keymap.set('n', '<leader>fu', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
+vim.keymap.set('n', '<leader><space><space>', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fc', builtin.commands, {})
 
 
