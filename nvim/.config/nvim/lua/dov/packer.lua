@@ -156,10 +156,5 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons',
         after = "catppuccin"
     }
-    use {
-        "folke/flash.nvim",
-        config = function()
-            require("plugins.flash")
-        end
-    }
+    use {"folke/flash.nvim",}
 end)

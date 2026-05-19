@@ -1,6 +1,5 @@
 local Flash = require("flash")
 
----@param opts Flash.Format
 local function format(opts)
     -- always show first and second label
     return {
