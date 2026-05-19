@@ -43,5 +43,5 @@ vim.keymap.set("n", "<leader><space>", "<Cmd>BufferLinePick<CR>", { desc = "Pick
 vim.keymap.set("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle pin on buffer" })
 
 -- Delete all buffers EXCEPT the pinned ones
-vim.keymap.set("n", "<leader>db", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Close all non-pinned buffers" })
-vim.keymap.set("n", "<leader>dB", "<CMD>bdelete<cr>")
+vim.keymap.set("n", "<leader>dB", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Close all non-pinned buffers" })
+vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")

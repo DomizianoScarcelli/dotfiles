@@ -87,7 +87,7 @@ return require('packer').startup(function(use)
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
-    use { "folke/snacks.nvim"}
+    use { "folke/snacks.nvim" }
 
     use {
         "alexpasmantier/pymple.nvim",
@@ -155,5 +155,11 @@ return require('packer').startup(function(use)
         tag = "*",
         requires = 'nvim-tree/nvim-web-devicons',
         after = "catppuccin"
+    }
+    use {
+        "folke/flash.nvim",
+        config = function()
+            require("plugins.flash")
+        end
     }
 end)

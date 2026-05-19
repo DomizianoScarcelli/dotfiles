@@ -21,6 +21,14 @@ Go to next buffer | L
 Go to previous buffer | H
 Pick Buffers | <leader><space>
 
+## flash
+Treesitter Search | S
+Fast Search | s
+Visual Search | <leader>R
+Two-letter jump | <leader>j
+Toggle flash in search | <C-s>
+Toggle flash in search | <C-s>
+
 ## toggleterm
 Toggle Floating Terminal | <C-\>
 
