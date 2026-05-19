@@ -36,7 +36,6 @@ vim.keymap.set("n", "/", "/\\c")
 -- Change Buffers (commented out because of bufferline better mapping)
 -- vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
 -- vim.keymap.set("n", "L", "<CMD>bnext<cr>")
-vim.keymap.set("n", "<leader>db", "<CMD>bdelete<cr>")
 -- vim.keymap.set("n", "<leader>do", "<CMD>:%%bd|e#|bd#<cr>")
 
 -- Change tabs
