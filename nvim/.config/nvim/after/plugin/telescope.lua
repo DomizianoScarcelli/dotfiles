@@ -11,9 +11,7 @@ local previewers = require("telescope.previewers")
 local utils = require("telescope.utils")
 local from_entry = require("telescope.from_entry")
 local make_entry = require("telescope.make_entry")
-
--- Import your custom module
-local metascope = require("after.plugin.metascope")
+local metascope = require("metascope")
 
 telescope.setup {
     defaults = {

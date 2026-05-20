@@ -138,5 +138,13 @@ return require('packer').startup(function(use)
         after = "catppuccin"
     }
     use { "folke/flash.nvim", }
+    use {
+        "DomizianoScarcelli/metascope.nvim",
+        requires = { "nvim-telescope/telescope.nvim" },
+        config = function()
+            require("metascope").setup({
+                max_history = 10000,
+            })
+        end
+    }
 end)
-
