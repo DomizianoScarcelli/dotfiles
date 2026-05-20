@@ -12,32 +12,27 @@ local utils = require("telescope.utils")
 local from_entry = require("telescope.from_entry")
 local make_entry = require("telescope.make_entry")
 
+-- Import your custom module
+local metascope = require("after.plugin.metascope")
+
 telescope.setup {
     defaults = {
         cache_picker = { num_pickers = 30 },
         file_ignore_patterns = { ".git/", "node_modules" },
-        -- path_display = { "shorten" },
-        -- path_display = { "smart" },
         mappings = {
             n = {
                 ["cd"] = function(prompt_bufnr)
                     local selection = require("telescope.actions.state").get_selected_entry()
                     local dir = vim.fn.fnamemodify(selection.path, ":p:h")
                     require("telescope.actions").close(prompt_bufnr)
-                    -- Depending on what you want put `cd`, `lcd`, `tcd`
                     vim.cmd(string.format("Oil %s", dir))
                 end
             },
         }
-
     },
     pickers = {
-        find_files = {
-            hidden = true,
-        },
-        git_files = {
-            hidden = true
-        },
+        find_files = { hidden = true },
+        git_files = { hidden = true },
         live_grep = {
             vimgrep_arguments = {
                 'rg',
@@ -72,30 +67,48 @@ local cdPicker = function(name, cmd)
     }):find()
 end
 
-function Cd(path)
-    local iCloud = "/Users/dov/Library/Mobile\\ Documents/com~apple~CloudDocs/dovsync "
-    local Desktop = "/Users/dov/Desktop "
-    local Downloads = "/Users/dov/Downloads "
-    cdPicker('Cd',
-        { vim.o.shell, '-c', "fd . " ..
-        iCloud .. Desktop .. Downloads .. "--exclude node_modules --type directory 2>/dev/null" })
-end
+-- =========================================
+-- CUSTOM METASCOPE KEYMAPS
+-- =========================================
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fh', function()
+    metascope.history_picker()
+end, { desc = "All Telescope History" })
+
+-- Find Files with history integration
+vim.keymap.set('n', '<leader>ff', function()
+    builtin.find_files({
+        prompt_title = "Find Files",
+        attach_mappings = metascope.make_attach_save_prompt("files"),
+        hidden = true,
+    })
+end, { desc = "Find files (Defaults to last file search)" })
+
+-- Live Grep with history integration
+vim.keymap.set('n', '<leader>fg', function()
+    builtin.live_grep({
+        prompt_title = "Live Grep",
+        attach_mappings = metascope.make_attach_save_prompt("grep"),
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+        }
+    })
+end, { desc = "Live grep (Defaults to last grep)" })
+
+
 vim.keymap.set('n', '<leader>lf', builtin.resume, {})
 vim.keymap.set('n', '<leader>fp', builtin.pickers, {})
--- vim.keymap.set('n', '<leader>fz',
---     "<CMD>:lua require('telescope').extensions.z.z { cmd = { '/Users/dov/.config/z.lua/z.lua', '-l' } }<cr>", {})
-vim.keymap.set('n', '<leader>fd', Cd, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fG', function()
-    require('telescope.builtin').live_grep()
-end, {})
+vim.keymap.set('n', '<leader>fG', function() builtin.live_grep() end, {})
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader><space><space>', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fc', builtin.commands, {})
-
-
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
 
@@ -107,18 +120,15 @@ vim.keymap.set('n', '<leader>/', function()
         })
 end, {})
 
-vim.keymap.set('n', '<leader>fg', function()
-    require('telescope.builtin').live_grep({
-        prompt_title = "Live Grep (Respects .gitignore)",
-        vimgrep_arguments = {
-            'rg',
-            '--color=never',
-            '--no-heading',
-            '--with-filename',
-            '--line-number',
-            '--column',
-            '--smart-case',
-            -- The "-u" flags are removed here so rg respects .gitignore
-        }
+vim.keymap.set('n', '<leader>fw', function()
+    builtin.lsp_dynamic_workspace_symbols({
+        symbols = { "function", "method" }
     })
-end, { desc = "Live grep respecting .gitignore" })
+end, { desc = 'Find functions in workspace' })
+
+vim.keymap.set('n', '<leader>fF', function()
+    builtin.live_grep({
+        prompt_title = "Regex Function Search (No LSP)",
+        default_text = "\\b(function|func|fn|def)\\s+\\w+"
+    })
+end, { desc = 'Grep for function definitions' })
