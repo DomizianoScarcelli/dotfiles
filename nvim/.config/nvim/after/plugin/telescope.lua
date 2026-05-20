@@ -84,8 +84,8 @@ end
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>lf', builtin.resume, {})
 vim.keymap.set('n', '<leader>fp', builtin.pickers, {})
-vim.keymap.set('n', '<leader>fz',
-    "<CMD>:lua require('telescope').extensions.z.z { cmd = { '/Users/dov/.config/z.lua/z.lua', '-l' } }<cr>", {})
+-- vim.keymap.set('n', '<leader>fz',
+--     "<CMD>:lua require('telescope').extensions.z.z { cmd = { '/Users/dov/.config/z.lua/z.lua', '-l' } }<cr>", {})
 vim.keymap.set('n', '<leader>fd', Cd, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fG', function()

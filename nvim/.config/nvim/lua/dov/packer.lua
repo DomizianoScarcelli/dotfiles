@@ -118,25 +118,6 @@ return require('packer').startup(function(use)
         'saghen/blink.cmp',
         requires = 'rafamadriz/friendly-snippets',
         tag = 'v1.*',
-        config = function()
-            require('blink.cmp').setup({
-                -- Change 'default' to 'super-tab'
-                keymap = { preset = 'super-tab' },
-
-                appearance = {
-                    nerd_font_variant = 'mono'
-                },
-                completion = {
-                    documentation = { auto_show = false }
-                },
-                sources = {
-                    default = { 'lsp', 'path', 'snippets', 'buffer' },
-                },
-                fuzzy = {
-                    implementation = "prefer_rust_with_warning"
-                }
-            })
-        end
     }
     use {
         'nvim-pack/nvim-spectre',
@@ -156,5 +137,6 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons',
         after = "catppuccin"
     }
-    use {"folke/flash.nvim",}
+    use { "folke/flash.nvim", }
 end)
+
