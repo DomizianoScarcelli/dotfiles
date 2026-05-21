@@ -1,6 +1,9 @@
 require('snacks').setup({
     bigfile = { enabled = true },
+    animate = { enabled = true }, -- Fully enabled
+    scroll = { enabled = true },  -- Smooth scrolling out-of-the-box
     notifier = { enabled = true, timeout = 3000 },
+    picker = { enabled = true },
     quickfile = { enabled = true },
     dashboard = {
         enabled = true,
