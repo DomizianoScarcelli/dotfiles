@@ -143,8 +143,50 @@ return require('packer').startup(function(use)
         requires = { "nvim-telescope/telescope.nvim" },
         config = function()
             require("metascope").setup({
-                max_history = 10000,
+                max_history = 1000000,
             })
         end
     }
+    use {
+        "9seconds/repolink.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim"
+        },
+        opt = true,
+        cmd = {
+            "RepoLink"
+        },
+
+        config = function()
+            require("repolink").setup({})
+        end
+    }
+    use({
+        "Isrothy/neominimap.nvim",
+        requires = {
+            "nvim-treesitter/nvim-treesitter",
+            "lewis6991/gitsigns.nvim",
+        },
+        -- 'setup' runs BEFORE the plugin loads. This is where global config goes.
+        setup = function()
+            vim.g.neominimap = {
+                auto_enable = true,
+                -- Add any other specific configurations inside this table
+            }
+        end,
+        -- 'config' runs AFTER the plugin loads. This is where API calls and keymaps go.
+        config = function()
+            vim.keymap.set("n", "<leader>nt", function()
+                require("neominimap.api").toggle()
+            end, { desc = "Toggle Neominimap" })
+
+            vim.keymap.set("n", "<leader>nf", function()
+                require("neominimap.api").focus.toggle()
+            end, { desc = "Toggle Focus on Neominimap" })
+
+            vim.keymap.set("n", "<leader>nr", function()
+                require("neominimap.api").refresh()
+            end, { desc = "Refresh Neominimap" })
+        end,
+    })
 end)

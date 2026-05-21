@@ -1,9 +1,17 @@
 -- "CATPPUCCIN THEME"
 local color = 'catppuccin-mocha'
 require("catppuccin").setup(
-{
-    transparent_background=true
-})
+    {
+        transparent_background = true, custom_highlights = function(colors)
+            return {
+                -- Targets the specific neominimap active area / cursor line
+                NeominimapCursorLine = { bg = colors.surface1 },
+
+                -- You can even push it brighter with surface2 if surface1 isn't enough:
+                -- NeominimapCursorLine = { bg = colors.surface2 },
+            }
+        end
+    })
 vim.cmd.colorscheme(color)
 
 vim.o.background = "dark" -- or "light" for light mode
@@ -13,7 +21,7 @@ vim.o.background = "dark" -- or "light" for light mode
 -- "ARIAKE THEME"
 -- Enable termguicolors if available
 if vim.fn.has("termguicolors") == 1 then
-  vim.opt.termguicolors = true
+    vim.opt.termguicolors = true
 end
 
 -- -- Theme settings
