@@ -1,9 +1,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
--- If using the default NetRw file explorer
--- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
--- If using oil.nvim
--- vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>")
 
 -- To use j, k also in soft wrap mode
 vim.keymap.set("n", "j", "gj")
@@ -12,12 +8,14 @@ vim.keymap.set("n", "s$", "g$")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<C-j>", "<C-d>zz")
+vim.keymap.set("n", "<C-k>", "<C-u>zz")
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- vim.keymap.set("n", "J", "mzJ`z")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -28,22 +26,12 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("i", "<M-BS>", "<C-W>")
--- vim.keymap.set("i", "<M-BS>", '<Esc>vb"_xi', { desc = "Delete previous word without yanking" })
--- vim.keymap.set("n", "<leader>dwl", '<Esc>vb"_xi', { desc = "Delete previous word without yanking" })
-
 vim.keymap.set("n", "/", "/\\c")
 
 -- Change Buffers (commented out because of bufferline better mapping)
 -- vim.keymap.set("n", "H", "<CMD>bprevious<cr>")
 -- vim.keymap.set("n", "L", "<CMD>bnext<cr>")
 -- vim.keymap.set("n", "<leader>do", "<CMD>:%%bd|e#|bd#<cr>")
-
--- Change tabs
--- vim.keymap.set("n", "<C-h>", "<CMD>tabprevious<cr>")
--- vim.keymap.set("n", "<C-l>", "<CMD>tabnext<cr>")
--- vim.keymap.set("n", "<C-n>", "<CMD>tabnew<cr>")
--- vim.keymap.set("n", "<leader>dt", "<CMD>tabdelete<cr>")
-
 
 -- Open in finder
 vim.keymap.set("n", "<leader>of", "<CMD>!cd .. && open %:p:h<cr>")
