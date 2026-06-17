@@ -143,7 +143,26 @@ return require('packer').startup(function(use)
         requires = { "nvim-telescope/telescope.nvim" },
         config = function()
             require("metascope").setup({
-                max_history = 1000000,
+                max_history = 5000,
+                picker_history_keymap = "<C-h>", -- open per-picker history; false to disable
+                picker_history_keymap_mode = { "n", "i" },
+                resume_keymap = "<C-r>", -- in the dashboard: re-run the search instead of jumping; false to disable
+                cwd_boost = 4,       -- frecency multiplier for entries from the current project
+                half_life_days = 3,  -- recency decay: an entry's weight halves every N days
+                save_debounce_ms = 1000, -- coalesce rapid writes into one async flush
+
+                -- Hybrid files + history picker
+                hybrid = {
+                    source_types = { "files", "buffers" }, -- history types that resolve to a file
+                    frecency_bonus = 8,        -- how strongly frecency biases ranking while typing
+                    show_all_on_empty = false, -- empty prompt: recents only (false) or whole tree (true)
+                    cwd_only = true,           -- only surface recents from the current project
+                    find_command = nil,        -- override the file-listing command, e.g. { "fd", "--type", "f" }
+                },
+
+                -- Set the three keymaps for you. Use `true` for the recommended bindings,
+                -- a table to customise, or omit/false to bind them yourself (see below).
+                keymaps = true, -- <leader>ff find_files · <leader>fh history · <leader>fo hybrid
             })
         end
     }

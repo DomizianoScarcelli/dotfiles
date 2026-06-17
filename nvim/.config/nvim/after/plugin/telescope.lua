@@ -69,35 +69,43 @@ end
 -- CUSTOM METASCOPE KEYMAPS
 -- =========================================
 
-vim.keymap.set('n', '<leader>fh', function()
+vim.keymap.set('n', '<leader>fo', function()
     metascope.history_picker()
 end, { desc = "All Telescope History" })
 
--- Find Files with history integration
 vim.keymap.set('n', '<leader>ff', function()
-    builtin.find_files({
-        prompt_title = "Find Files",
-        attach_mappings = metascope.make_attach_save_prompt("files"),
-        hidden = true,
-    })
-end, { desc = "Find files (Defaults to last file search)" })
+    metascope.hybrid()
+end, { desc = "All Telescope History" })
+
+vim.keymap.set('n', '<leader>fg', function()
+    metascope.hybrid_grep()
+end, { desc = "All Telescope History" })
+
+-- Find Files with history integration
+-- vim.keymap.set('n', '<leader>ff', function()
+--     builtin.find_files({
+--         prompt_title = "Find Files",
+--         attach_mappings = metascope.make_attach_save_prompt("files"),
+--         hidden = true,
+--     })
+-- end, { desc = "Find files (Defaults to last file search)" })
 
 -- Live Grep with history integration
-vim.keymap.set('n', '<leader>fg', function()
-    builtin.live_grep({
-        prompt_title = "Live Grep",
-        attach_mappings = metascope.make_attach_save_prompt("grep"),
-        vimgrep_arguments = {
-            'rg',
-            '--color=never',
-            '--no-heading',
-            '--with-filename',
-            '--line-number',
-            '--column',
-            '--smart-case',
-        }
-    })
-end, { desc = "Live grep (Defaults to last grep)" })
+-- vim.keymap.set('n', '<leader>fg', function()
+--     builtin.live_grep({
+--         prompt_title = "Live Grep",
+--         attach_mappings = metascope.make_attach_save_prompt("grep"),
+--         vimgrep_arguments = {
+--             'rg',
+--             '--color=never',
+--             '--no-heading',
+--             '--with-filename',
+--             '--line-number',
+--             '--column',
+--             '--smart-case',
+--         }
+--     })
+-- end, { desc = "Live grep (Defaults to last grep)" })
 
 
 vim.keymap.set('n', '<leader>lf', builtin.resume, {})
