@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
 
     -- Telescope
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        'nvim-telescope/telescope.nvim', tag = 'v0.2.2',
         requires = { { 'nvim-lua/plenary.nvim', "BurntSushi/ripgrep" } }
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
@@ -21,9 +21,14 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
 
     -- Treesitter
-    use { "nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' }, requires = {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-    }, }
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        branch = 'main',
+        run = ':TSUpdate',
+        requires = {
+            { "nvim-treesitter/nvim-treesitter-textobjects", branch = 'main' },
+        },
+    }
     use { "nvim-treesitter/nvim-treesitter-context" }
 
     -- UndoTree
@@ -66,7 +71,6 @@ return require('packer').startup(function(use)
 
     use { "andrewferrier/wrapping.nvim" }
     use { 'lervag/vimtex' }
-    use { "tversteeg/registers.nvim" }
     use { "akinsho/git-conflict.nvim" }
     use { "nvim-tree/nvim-tree.lua" }
     use { "mikavilpas/yazi.nvim" }
