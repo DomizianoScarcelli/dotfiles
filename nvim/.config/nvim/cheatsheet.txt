@@ -4,73 +4,129 @@ Find Buffers | <leader><space><space>
 Find Git Files | <leader>gf
 Live Grep (.gitignore) | <leader>fg
 Live Grep (all files) | <leader>fG
+Grep function definitions (regex) | <leader>fF
+Find functions in workspace (LSP) | <leader>fw
 Find Recent Files | <leader>fr
+Fuzzy find in current buffer | <leader>/
 See Cached Pickers | <leader>fp
 Resume last picker | <leader>lf
 Find Commands | <leader>fc
 Find Buffers | <leader><space>
+Git Commits | <leader>gc
+Git Status | <leader>gs
+LSP References | gr
+cd to selected entry's dir (Oil) | cd (in picker, normal mode)
+
+## git (in nvim, no lazygit pane needed)
+Open Lazygit floating terminal | <leader>gg
+Git Status picker (changed/staged/untracked files) | <leader>gs
+Git Commits picker | <leader>gc
+Git Files (tracked only) | <leader>gf
+Accept conflict (ours/theirs/both) | :GitConflictChooseOurs / :GitConflictChooseTheirs / :GitConflictChooseBoth
+Move to next/previous git conflict | ]x / [x
 
 ## bufferline
 Delete a buffer | <leader>db
 Delete other buffers | <leader>do
 Delete buffers to the right | <leader>dr
 Delete buffers to the left | <leader>dl
-Move buffer to the right | <leader>R
-Move buffer to the left | <leader>R
+Close all non-pinned buffers | <leader>dB
+Toggle pin on buffer | <leader>bp
+Move buffer to the right | <leader>L
+Move buffer to the left | <leader>H
 Go to next buffer | L
 Go to previous buffer | H
-Pick Buffers | <leader><space>
+Pick a buffer to jump to | <leader><space>
 
 ## flash
 Treesitter Search | S
 Fast Search | s
-Visual Search | <leader>R
+Remote Flash (operator pending) | r (in operator-pending mode)
+Treesitter Search (op/normal/visual) | <leader>R
 Two-letter jump | <leader>j
-Toggle flash in search | <C-s>
-Toggle flash in search | <C-s>
+Toggle flash in command-line search | <C-s>
 
-## toggleterm
+## toggleterm / snacks
 Toggle Floating Terminal | <C-\>
 
 ## tmux
 Cycle screen | <prefix>n
 
 ## nvim
-Search and replace | %s/search/replace
+Search and replace | :%s/search/replace/g
+Toggle line wrap | yow
+Hard wrap mode | [ow
+Soft wrap mode | ]ow
+Move line(s) up/down (visual) | J / K
+Half-page down/up, keep centered | <C-j> / <C-k>
+Center screen after block jump | { / }
+Paste over selection w/o losing register (visual) | <leader>p
+Yank to system clipboard | <leader>y / <leader>Y (line)
+Delete to void register (no yank) | <leader>d
+Case-insensitive search | /
+Undo tree | <leader>u
+Open file's dir in Finder | <leader>of
+Print current file's full path | <leader>pd
+Toggle registers viewer | <leader>rl
 
 ## vim-split-panes
 Increase/decrease height | <Ctrl+W> +/- (ex. 20<C-w>+)
 Increase/decrease width | <Ctrl+W> >/< (ex. 30<C-w><)
 Set height | <Ctrl+W> _ (ex. 50<C-w>_)
 Set width |<Ctrl+W> | (ex. 50<C-w>|)
-Equalize width and height of all windows | <Ctrl+W> = 
+Equalize width and height of all windows | <Ctrl+W> =
 
 ## misc
-Git Commits | <leader>gc
-Git Status | <leader>gs
 Show results on Quickfixlist | <C-q>
 Flip v-split windows | <C-w><C-x>
 Rotate windows | <C-w><C-r>
+Rename current file (snacks) | <leader>cR
+Jump to next/previous LSP reference of word under cursor | ]] / [[
 
-## code
-Generate Documentation | <leader>d
-Execute Commands | :!<command>
-Comment Selection | <leader>gc
+## code / lsp
+Go to definition | gd
+Go to references (Telescope) | gr
+Go to type definition | <leader>td
+Hover / Function Information | K
+Signature help | <leader>h
+Rename symbol | <leader>rn
+LSP Code Actions | <leader>cc
+Workspace symbols | <leader>vws
+Diagnostics: expand float | <leader>vd
+Diagnostics: next/prev | <leader>[d / <leader>]d
+Generate Documentation (DoGe) | <leader>d
+Jump to treesitter context (enclosing fn/class) | [c
+Select code cell (markdown, textobject) | ib / ab
+Next/previous code cell | ]b / [b
 Format code | <leader>fb
-LSP Code Actions | <leader>ca
-Function Information (Hover) | K
-Expand Error (Open Float) | <leader>vd
+Execute Commands | :!<command>
+Fold all / Unfold all | zM / zR
 
 ## Spectre
 Spectre search and replace | <leader>S
 Spectre search and replace current word | <leader>sw
 Spectre search and replace on current file | <leader>sp
 
-## Octo
+## Octo (GitHub)
 Start Draft PR Review | :Octo review start
 Delete Draft PR Review | :Octo review discard
 Submit PR Review | :Octo review submit
+List GitHub Issues | <leader>oi
+List GitHub Pull Requests | <leader>op
+List GitHub Discussions | <leader>od
+List GitHub Notifications | <leader>on
+Search GitHub | <leader>os
 Leave PR Comment | <leader>ca
+
+## Molten (Jupyter/REPL)
+Initialize Molten in buffer | <leader>mi
+Evaluate operator selection | <leader>e
+Evaluate current line | <leader>el
+Re-evaluate current cell | <leader>er
+Evaluate visual selection | <leader>ev
+Delete cell output | <leader>rd
+Hide output | <leader>oh
+Show/enter output | <leader>os
 
 ## text
 Hard Wrap Mode | [ow
@@ -78,4 +134,10 @@ Soft Wrap Mode | ]ow
 Toggle Wrap Mode | yow
 
 ## file-explorer
-Open Neovim tree | <leader>pv
+Open Neovim tree (nvim-tree, find current file) | <leader>pv
+Open Yazi file manager | <leader>-
+
+## minimap
+Toggle Neominimap | <leader>nt
+Focus Neominimap | <leader>nf
+Refresh Neominimap | <leader>nr
