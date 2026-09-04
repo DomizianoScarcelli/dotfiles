@@ -118,16 +118,6 @@ List GitHub Notifications | <leader>on
 Search GitHub | <leader>os
 Leave PR Comment | <leader>ca
 
-## Molten (Jupyter/REPL)
-Initialize Molten in buffer | <leader>mi
-Evaluate operator selection | <leader>e
-Evaluate current line | <leader>el
-Re-evaluate current cell | <leader>er
-Evaluate visual selection | <leader>ev
-Delete cell output | <leader>rd
-Hide output | <leader>oh
-Show/enter output | <leader>os
-
 ## text
 Hard Wrap Mode | [ow
 Soft Wrap Mode | ]ow
