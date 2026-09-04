@@ -67,7 +67,6 @@ Case-insensitive search | /
 Undo tree | <leader>u
 Open file's dir in Finder | <leader>of
 Print current file's full path | <leader>pd
-Toggle registers viewer | <leader>rl
 
 ## vim-split-panes
 Increase/decrease height | <Ctrl+W> +/- (ex. 20<C-w>+)
