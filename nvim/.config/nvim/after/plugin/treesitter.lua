@@ -1,8 +1,4 @@
-local ensure_installed = {
-  "lua", "python", "bash", "markdown", "markdown_inline", "yaml", "rust"
-}
-
-require("nvim-treesitter").install(ensure_installed)
+require("nvim-treesitter").install(require("dov.treesitter_langs"))
 
 -- Filetypes to enable treesitter features for (markdown_inline has no filetype of its own).
 local filetypes = { "lua", "python", "sh", "markdown", "yaml", "rust" }

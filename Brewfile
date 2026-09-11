@@ -3,7 +3,7 @@
 # Install everything: brew bundle install ; remove strays: brew bundle cleanup
 
 # --- Taps
-tap "cooklang/tap"
+tap "cooklang/tap", trusted: true
 tap "facebook/fb", trusted: true
 
 # --- Formulae
@@ -14,7 +14,7 @@ brew "chruby"
 brew "cloc"
 brew "cloudflared"
 brew "cocoapods"
-brew "cooklang/tap/cook"
+brew "cooklang/tap/cookcli"
 brew "curl"
 brew "exiftool"
 brew "facebook/fb/idb-companion"
