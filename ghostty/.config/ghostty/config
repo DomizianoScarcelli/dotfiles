@@ -1,0 +1,4 @@
+# Caps lock is remapped to F18 at the HID level (~/.config/hidutil/keymap.sh).
+# Ghostty doesn't encode F13+ in legacy key mode, so emit the sequence its own
+# terminfo advertises for kf18 (xterm shift+F6). tmux sees it as S-F6 (prefix).
+keybind = f18=text:\x1b[17;2~
