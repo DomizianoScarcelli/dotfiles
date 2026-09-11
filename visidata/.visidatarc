@@ -1,3 +1,0 @@
-import dedupe
-
-TableSheet.bindkey('zn', 'go-col-name')
