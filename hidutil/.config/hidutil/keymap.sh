@@ -11,7 +11,7 @@
 CAPS='{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x70000006D}'
 GRAVE='{"HIDKeyboardModifierMappingSrc":0x700000035,"HIDKeyboardModifierMappingDst":0x700000064},
        {"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000035}'
-INTERNAL='{"VendorID":0x5ac,"ProductID":0x281}'   # Apple Internal Keyboard / Trackpad
+INTERNAL='{"Built-In":1,"PrimaryUsagePage":1,"PrimaryUsage":6}'   # the laptop's own keyboard, whichever Mac this is
 
 case "${1:-apply}" in
   apply)
