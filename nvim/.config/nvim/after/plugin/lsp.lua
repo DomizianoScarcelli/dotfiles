@@ -54,8 +54,14 @@ vim.lsp.enable("dbtls")
 -- Mason: installs tools; mason-lspconfig v2 calls vim.lsp.enable() for every installed server
 require("mason").setup({})
 require("mason-lspconfig").setup({})
+-- Everything Mason should have. `./install.sh` runs :MasonToolsInstallSync to install these headless.
 require("mason-tool-installer").setup({
-    ensure_installed = { "black", "sqlfluff", "yamllint" },
+    ensure_installed = {
+        -- LSP servers
+        "bashls", "cssls", "html", "jsonls", "lua_ls", "ruff", "ty", "ts_ls",
+        -- formatters / linters
+        "black", "isort", "prettier", "sqlfluff", "yamllint",
+    },
 })
 
 -- Formatting (was: conform for python + null-ls for black/sqlfluff)
