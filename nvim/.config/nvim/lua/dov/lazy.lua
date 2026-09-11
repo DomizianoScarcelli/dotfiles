@@ -31,18 +31,12 @@ require("lazy").setup({
 
     { "mbbill/undotree" },
 
-    -- LSP
-    {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "neovim/nvim-lspconfig",
-        },
-    },
-    { "nvimtools/none-ls.nvim" },
-    { "jay-babu/mason-null-ls.nvim" },
+    -- LSP (native vim.lsp.config/enable; mason-lspconfig v2 auto-enables installed servers)
+    { "neovim/nvim-lspconfig" },
+    { "mason-org/mason.nvim" },
+    { "mason-org/mason-lspconfig.nvim", dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" } },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim", dependencies = { "mason-org/mason.nvim" } },
+    { "mfussenegger/nvim-lint" }, -- diagnostics from CLI tools (sqlfluff, yamllint)
     { "tpope/vim-commentary" },
     { "mechatroner/rainbow_csv" },
     { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
@@ -71,12 +65,7 @@ require("lazy").setup({
         build = ":PympleBuild",
         config = function() require("pymple").setup() end,
     },
-    {
-        "stevearc/conform.nvim",
-        config = function()
-            require("conform").setup({ formatters_by_ft = { python = { "ruff" } } })
-        end,
-    },
+    { "stevearc/conform.nvim" }, -- configured in after/plugin/lsp.lua
     { "saghen/blink.cmp", version = "1.*", dependencies = { "rafamadriz/friendly-snippets" } },
     { "nvim-pack/nvim-spectre", dependencies = { "nvim-lua/plenary.nvim" } },
     {
