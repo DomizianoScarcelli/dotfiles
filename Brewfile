@@ -68,6 +68,7 @@ brew "transmission-cli"
 brew "trash"
 brew "trash-cli", link: true
 brew "tree"
+brew "tree-sitter-cli"   # nvim-treesitter parser builds
 brew "unar"
 brew "unbound", restart_service: :changed
 brew "unzip"
