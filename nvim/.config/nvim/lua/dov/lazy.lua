@@ -97,9 +97,15 @@ require("lazy").setup({
                     find_command = nil,                    -- override the file-listing command, e.g. { "fd", "--type", "f" }
                 },
 
-                -- Set the three keymaps for you. Use `true` for the recommended bindings,
-                -- a table to customise, or omit/false to bind them yourself (see below).
-                keymaps = true, -- <leader>ff find_files · <leader>fh history · <leader>fo hybrid
+                -- Explicit table instead of `true`: the recommended set also binds
+                -- <leader>fb (buffers), which is conform's format key in lsp.lua.
+                keymaps = {
+                    find_files = "<leader>ff", -- recents first, whole project as you type
+                    live_grep = "<leader>fg",  -- recent queries first, pinned while typing
+                    history = "<leader>fh",    -- dashboard
+                    last = "<leader>fl",       -- resume the last search
+                    hybrid = "<leader>fo",     -- alias of find_files (muscle memory)
+                },
             })
         end,
     },
