@@ -1,10 +1,12 @@
 These are my configuration files for MacOS.
 
-![Screenshot 2024-10-30 at 12 10 18 PM](https://github.com/user-attachments/assets/7d16af30-803b-4e57-90c3-d8a501f1de03)
+
 
 
 <details>
   <summary>Old configurations (I like to change the look pretty frequently lol)</summary>
+
+  ![Screenshot 2024-10-30 at 12 10 18 PM](https://github.com/user-attachments/assets/7d16af30-803b-4e57-90c3-d8a501f1de03)
   
   <img src="https://github.com/DomizianoScarcelli/dotfiles/assets/44399141/250b4576-e828-48ae-8f3b-7b6c43bdfdb1" />
   
